@@ -22,3 +22,14 @@
   <a href="https://github.com/rynam0" target="_blank">@rynam0</a> on
   <a href="https://github.com/rynam0/ember-cli-vtkui" target="_blank">GitHub</a>
 {{/g-toolbar}}
+
+{{#if showModal}}
+  {{#g-modal title=modalTitle closeAction="closeModal"}}
+    <div class="g-modal-body">
+      <p>{{modalMessage}}</p>
+    </div>
+    <div class="g-modal-footer">
+      {{g-button text="OK" action="closeModal"}}
+    </div>
+  {{/g-modal}}
+{{/if}}

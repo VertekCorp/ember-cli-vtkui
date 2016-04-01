@@ -5,6 +5,7 @@
   border-radius: 4px;
   box-shadow: 0 0 6px #222;
   background: $lightBlue !important;
+  max-width: 90vw !important;
 }
 .ember-modal-overlay.translucent {
   background-color: rgba(128, 128, 128, 0.2) !important;
@@ -25,6 +26,8 @@
   padding: 5px;
   border:1px solid $borderColor;
   border-radius:2px;
+  overflow: auto;
+  max-width: 90vw !important;
 }
 
 .g-modal-footer {

@@ -18,7 +18,11 @@ export default Ember.Route.extend({
 
   actions: {
     alertRow(arg) {
-      window.alert('you doubleclicked: ' + JSON.stringify(arg));
+      this.controllerFor('application').setProperties({
+        showModal: true,
+        modalTitle: 'Info',
+        modalMessage: `you doubleclicked: ${JSON.stringify(arg)}`
+      });
     }
   }
 });
