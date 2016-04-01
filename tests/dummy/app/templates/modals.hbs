@@ -1,0 +1,35 @@
+{{#g-panel title="Modals"}}
+  {{#g-toolbar}}
+    {{g-button text="Show Modal" action="toggleModal"}}
+  {{/g-toolbar}}
+  {{#g-panel-body}}
+
+    <p>Click the button to show a simple Modal Dialog.</p>
+
+    {{#if showModal}}
+      {{#g-modal title="Hiya" closeAction="toggleModal"}}
+
+        <div class="g-modal-body">
+          {{g-input label="First Name"}} <br/>
+          {{g-input label="Middle Name"}} <br/>
+          {{g-input label="Last Name"}} <br/>
+          {{g-input label="Birthday" type="date"}} <br/>
+          {{g-textarea label="Notes"}}
+          <br/>
+        </div>
+
+        <div class="g-modal-footer">
+          {{g-button text="OK" action="toggleModal"}}
+          {{g-button text="Cancel" action="toggleModal"}}
+        </div>
+      {{/g-modal}}
+    {{/if}}
+
+    {{#g-panel title="Example"}}
+      {{#g-panel-body}}
+        {{code-snippet name="modals.hbs"}}
+      {{/g-panel-body}}
+    {{/g-panel}}
+
+  {{/g-panel-body}}
+{{/g-panel}}

@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('buttons');
   this.route('grids');
   this.route('paginator');
+  this.route('modals');
 });
 
 export default Router;

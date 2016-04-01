@@ -1,0 +1,31 @@
+.ember-modal-dialog {
+  border-radius: 4px !important;
+  box-shadow: 0 0 6px #222 !important;
+  background: #d0def0 !important;
+}
+.ember-modal-overlay.translucent {
+  background-color: rgba(128, 128, 128, 0.2) !important;
+}
+
+.g-modal-container {
+  background: #a9bfd3;
+}
+
+.g-modal-title {
+  color: #244890;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.g-modal-body {
+  background: white;
+  padding: 5px;
+  border:1px solid #a9bfd3;
+  border-radius:2px;
+}
+
+.g-modal-footer {
+  color: #244890;
+  font-weight: bold;
+  margin-top: 10px;
+}
