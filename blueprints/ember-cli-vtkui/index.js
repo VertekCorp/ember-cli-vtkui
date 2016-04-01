@@ -7,7 +7,9 @@ module.exports = {
         { name: 'ember-cli-selectize', target: '0.5.2' },
         { name: 'ember-cp-validations', target: '2.5.0' },
         { name: 'ember-tooltips', target: '0.5.8' },
-        { name: 'liquid-fire', target: '0.23.0' }
+        { name: 'liquid-fire', target: '0.23.0' },
+        { name: 'ember-modal-dialog', target: '0.8.3' },
+        { name: 'ember-cli-sass', target: '5.3.1' }
       ]
     });
   }

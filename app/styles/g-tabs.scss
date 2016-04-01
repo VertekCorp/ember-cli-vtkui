@@ -1,34 +1,34 @@
 /** Tab Panels **/
 .g-tab {
-	font-size: 11px;
-	font-family: arial,tahoma,verdana,helvetica;
+	$radius: 5px;
+	$padding: 4px;
+	@extend .heading;
+
 	text-decoration: none;
 	text-align: center;
 	vertical-align: bottom;
-	border: 1px solid #8db2e3;
+	border: 1px solid $borderColor;
 	border-bottom: 0;
-	padding-left: 4px;
-	padding-right: 4px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	padding-left: $padding;
+	padding-right: $padding;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
 	display: inline-block;
 	min-width: 5rem;
 	height: 25px;
 	line-height: 27px;
 	position: relative;
 	bottom: 0;
-	color: #15428b;
+
 	background: linear-gradient(180deg, #d0def0, #b7ceed);
 	cursor: pointer;
 }
 .g-tab:hover {
-	color: #15428b;
+	color: $darkBlue;
 }
 .g-tab.active {
-	font-weight: bold;
-	font-size: 11px;
-	font-family: arial,tahoma,verdana,helvetica;
-  color: #15428b;
-	box-shadow: 1px 1px #b7ceed;
+	@extend .bold;
+	@extend .heading;
+	box-shadow: 1px 1px $borderColor;
 	background: linear-gradient(180deg, white, #d0def0);
 }

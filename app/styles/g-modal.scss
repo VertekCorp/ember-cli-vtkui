@@ -1,7 +1,10 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 .ember-modal-dialog {
-  border-radius: 4px !important;
-  box-shadow: 0 0 6px #222 !important;
-  background: #d0def0 !important;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #222;
+  background: $lightBlue !important;
 }
 .ember-modal-overlay.translucent {
   background-color: rgba(128, 128, 128, 0.2) !important;
@@ -12,20 +15,19 @@
 }
 
 .g-modal-title {
-  color: #244890;
-  font-weight: bold;
+  @extend .bold;
+  color: $darkBlue;
   margin-bottom: 10px;
 }
 
 .g-modal-body {
   background: white;
   padding: 5px;
-  border:1px solid #a9bfd3;
+  border:1px solid $borderColor;
   border-radius:2px;
 }
 
 .g-modal-footer {
-  color: #244890;
-  font-weight: bold;
+  @extend .bold;
   margin-top: 10px;
 }

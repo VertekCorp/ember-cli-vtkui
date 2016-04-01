@@ -2,21 +2,18 @@
   padding: 2px 0 2px 0;
 }
 .g-textarea label {
+  @extend .bold;
+  @extend .content;
   width: 100px;
   display: inline-block;
   vertical-align: top;
   padding-top: 2px;
-  font-weight: bold;
-  font-family: arial,tahoma,verdana,helvetica;
-  font-size: 12px;
   height: 100%;
 }
 .g-textarea textarea {
-  /*width: 192px;*/
+  @extend .content;
   width: 15.833em;
   min-height: 100px;
-  border: 1px solid #a9bfd3;
+  border: 1px solid $borderColor;
   background: linear-gradient(180deg, whitesmoke 5%, white 95%);
-  font-family: arial,tahoma,verdana,helvetica;
-  font-size: 12px;
 }

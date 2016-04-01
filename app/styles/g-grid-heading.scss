@@ -9,7 +9,7 @@
 	height: 0;
   border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	border-bottom: 6px solid #15428b;
+  border-bottom: 6px solid $darkBlue;
   display: inline-block;
   cursor: pointer;
 }
@@ -18,7 +18,7 @@
 	height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #15428b;
+  border-top: 6px solid $darkBlue;
   display: inline-block;
   cursor: pointer;
 }

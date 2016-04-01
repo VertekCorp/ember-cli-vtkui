@@ -5,22 +5,19 @@
 	padding-bottom: 2px;
 }
 .g-input-field {
+	@extend .content;
 	padding: 2px;
 	height: 18px;
 	width: 190px;
-	font-size: 12px;
-	font-family: arial,tahoma,verdana,helvetica;
-	border: 1px solid #a9bfd3;
+	border: 1px solid $borderColor;
 	background: linear-gradient(180deg, whitesmoke 5%, white 95%);
 }
 .g-input-field-label {
+	@extend .bold;
+	@extend .content;
 	min-width: 100px;
 	display: inline-block;
-	font-weight: bold;
-	font-size: 12px;
 	line-height: 22px;
-	/*vertical-align: top;*/
-	font-family: arial,tahoma,verdana,helvetica;
 }
 .g-valid {
 	width: 16px;
@@ -28,6 +25,3 @@
 	line-height: 16px;
 	display: inline-block;
 }
-/*.g-input-invalid {
-	border: 1px solid red;
-}*/

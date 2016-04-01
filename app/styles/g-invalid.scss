@@ -1,11 +1,11 @@
 .tooltip {
+	@extend .content;
 	z-index: 1;
 	position: absolute;
-	font-size: 12px;
-	font-family: arial,tahoma,verdana,helvetica;
 }
 
 .g-invalid {
+	@extend .content;
 	border: 1px solid #c30;
 	background: #c30;
 	color: white;
@@ -16,6 +16,4 @@
 	display: inline-block;
 	border-radius: 50%;
 	vertical-align: top;
-	font-size: 12px;
-	font-family: arial,tahoma,verdana,helvetica;
 }

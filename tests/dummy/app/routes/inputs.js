@@ -35,10 +35,8 @@ export default Ember.Route.extend({
 
   actions: {
     submit() {
-      console.log('saving...');
       let person = this.modelFor('inputs').person;
-      console.log(person.get('validations.isValid'));
-      console.log(person.get('validations.isInvalid'));
+      window.alert("the form is valid: " + person.get('validations.isValid'));
     },
     setCarModels(make) {
       let controller = this.controllerFor('inputs');

@@ -1,13 +1,10 @@
-@import "ember-modal-dialog/ember-modal-structure";
-@import "ember-modal-dialog/ember-modal-appearance";
-
+@import "ember-cli-vtkui";
 
 html, body {
 	height: 100vh;
 }
 body {
-	font-family: arial,verdana,arial,helvetica;
-	font-size: 12px;
+	@extend .content;
 	margin: 0;
 }
 a {
@@ -29,8 +26,8 @@ body > .ember-view {
 }
 .header {
 	padding: .7rem;
-	background: #DAE7F6;
-	border-bottom: 1px solid #B7CEED;
+	background: $lightBlue;
+	border-bottom: 1px solid $borderColor;
 }
 .body {
 	flex: 1;

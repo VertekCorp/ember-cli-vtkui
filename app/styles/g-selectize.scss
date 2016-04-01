@@ -1,6 +1,5 @@
 .selectize-dropdown, .selectize-input, .selectize-input input {
-  font-size: 12px;
-	font-family: arial,tahoma,verdana,helvetica;
+  @extend .content;
   line-height: 18px;
   width: 190px;
   width: 15.7em;
@@ -20,5 +19,5 @@
   vertical-align: middle;
 }
 .selectize-control.single .selectize-input, .selectize-dropdown.single {
-	border: 1px solid #a9bfd3;
+	border: 1px solid $borderColor;
 }

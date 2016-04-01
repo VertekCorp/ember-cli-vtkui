@@ -1,10 +1,10 @@
 .g-button {
+	@extend .heading;
 	color: #333;
-	font: 11px arial,tahoma,verdana,helvetica;
 	min-width: 70px;
 	border-radius: 9%;
 	padding: 3px;
-	border: 1px solid grey;
+	border: 1px solid $gray;
 	display: inline-block !important;
 	box-sizing: content-box;
 	background: linear-gradient(180deg, white 70%, #eee 30%);
@@ -13,11 +13,11 @@
 .g-button:hover {
 	background: linear-gradient(180deg, #dae7f6 70%, #b7ceed 30%);
 	cursor: pointer;
-	border-color: #a9bfd3;
+	border-color: $borderColor;
 }
 .g-button[disabled] {
 	background: #eee;
-	color: grey;
-	border-color: grey;
+	color: $gray;
+	border-color: $gray;
 	cursor: default;
 }

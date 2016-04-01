@@ -1,0 +1,22 @@
+.g-toolbar {
+	@extend .content;
+	$height: 30px;
+	$padding: 5px;
+	min-height: $height;
+	line-height: $height;
+	vertical-align: middle;
+	padding-left: $padding;
+	padding-right: $padding;
+	background-color: $lightBlue;
+	border-left: 1px solid $borderColor;
+	border-right: 1px solid $borderColor;
+	border-bottom: 1px solid $borderColor;
+}
+
+.g-toolbar form {
+	display: inline-block;
+}
+.g-toolbar .g-input-field-label {
+	min-width: auto;
+	padding-right: 4px;
+}

@@ -1,6 +1,7 @@
 .g-paginator {
-  line-height: 30px;
-  height: 30px;
+  $height: 30px;
+  line-height: $height;
+  height: $height;
   vertical-align: middle;
 }
 .vertical-center {
@@ -8,21 +9,23 @@
   margin: 0 4px 0 4px;
 }
 .left-arrow {
+  $thickness: 8px;
 	width: 0;
 	height: 0;
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-	border-right: 8px solid #15428b;
+	border-top: $thickness solid transparent;
+	border-bottom: $thickness solid transparent;
+	border-right: $thickness solid $darkBlue;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
 }
 .right-arrow {
+  $thickness: 8px;
 	width: 0;
 	height: 0;
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-	border-left: 8px solid #15428b;
+	border-top: $thickness solid transparent;
+	border-bottom: $thickness solid transparent;
+	border-left: $thickness solid $darkBlue;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;

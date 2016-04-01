@@ -1,0 +1,35 @@
+@import "variables";
+
+.bold {
+  font-weight: bold;
+}
+.heading {
+  color: $darkBlue;
+  font-family: $fontFamily;
+  font-size: $headingFontSize;
+}
+.content {
+  font-family: $fontFamily;
+  font-size: $bodyFontSize;
+}
+
+@import "g-button";
+@import "g-grid-heading";
+@import "g-grid-row";
+@import "g-grid";
+@import "g-input";
+@import "g-invalid";
+@import "g-modal";
+@import "g-paginator";
+@import "g-panel";
+@import "g-selectize";
+@import "g-tabs";
+@import "g-textarea";
+@import "g-toolbar";
+@import "tooltips";
+
+/** needed in a gxt app to allow all containers to fill parents.*/
+.ember-application, .ember-application > .ember-view, .liquid-container, .liquid-child {
+   height: 100%;
+	 overflow: auto;
+}
