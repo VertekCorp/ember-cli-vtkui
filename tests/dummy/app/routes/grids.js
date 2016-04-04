@@ -23,6 +23,14 @@ export default Ember.Route.extend({
         modalTitle: 'Info',
         modalMessage: `you doubleclicked: ${JSON.stringify(arg)}`
       });
+    },
+    onDragAndDrop(itemModels, draggedModel) {
+        this.controllerFor('application').setProperties({
+          showModal: true,
+          modalTitle: 'Info',
+          modalMessage: `you dragged: ${JSON.stringify(draggedModel)}
+          and the new order of items is: ${JSON.stringify(itemModels)}`
+        });
     }
   }
 });
