@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import Ember from 'ember';
 
-moduleForComponent('g-grid-col', 'Integration | Component | g grid col', {
+moduleForComponent('g-editable-grid-col', 'Integration | Component | g editable grid col', {
   integration: true
 });
 
