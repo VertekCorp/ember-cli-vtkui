@@ -9,7 +9,8 @@ module.exports = {
         { name: 'ember-tooltips', target: '0.5.8' },
         { name: 'liquid-fire', target: '0.23.0' },
         { name: 'ember-modal-dialog', target: '0.8.3' },
-        { name: 'ember-cli-sass', target: '5.3.1' }
+        { name: 'ember-cli-sass', target: '5.3.1' },
+        { name: 'ember-sortable', target: '1.8.1' }
       ]
     });
   }
