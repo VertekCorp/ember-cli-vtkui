@@ -28,6 +28,14 @@ export default Ember.Component.extend({
         this.get('children').pushObject(child);
       }
     }, 150);
+  },
+
+  actions: {
+    reorderItems(itemModels, draggedModel) {
+      this.set('content', itemModels);
+      this.set('content.justDragged', draggedModel);
+      this.sendAction(this.get('onDragAndDrop'), itemModels, draggedModel);
+    }
   }
 
 });

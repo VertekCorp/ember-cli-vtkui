@@ -5,14 +5,29 @@
     {{/each}}
   </tr>
 </thead>
-<tbody>
-  {{#each content as |row index|}}
-    {{#g-grid-row rowIndex=index}}
-      {{yield row index}}
-    {{/g-grid-row}}
-    {{else}}
-    <tr>
-      <td>No records found.</td>
-    </tr>
-  {{/each}}
-</tbody>
+
+{{#if onDragAndDrop}}
+  {{#sortable-group tagName="tbody" onChange="reorderItems" as |group|}}
+    {{#each content as |row index|}}
+      {{#sortable-item tagName="tr" model=row group=group handle="tr"}}
+        {{yield row index}}
+      {{/sortable-item}}
+      {{else}}
+      <tr>
+        <td>No records found.</td>
+      </tr>
+    {{/each}}
+  {{/sortable-group}}
+{{else}}
+  <tbody>
+    {{#each content as |row index|}}
+      {{#g-grid-row rowIndex=index}}
+        {{yield row index}}
+      {{/g-grid-row}}
+      {{else}}
+      <tr>
+        <td>No records found.</td>
+      </tr>
+    {{/each}}
+  </tbody>
+{{/if}}

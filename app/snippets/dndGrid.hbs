@@ -1,28 +1,22 @@
 {{!-- BEGIN-SNIPPET dndGrid --}}
 {{#g-panel title="Drag and Drop Grid"}}
-  {{#g-toolbar}}
-    {{g-button text="Toolbar Button"}}
-  {{/g-toolbar}}
   {{#g-panel-body}}
 
-    {{#g-editable-grid onDragAndDrop="onDragAndDrop" onDoubleClick="alertRow" sortField=sortField sortDir=sortDir content=model as |person|}}
-      {{#g-editable-grid-col heading="First Name" row=person sortPath="firstName"}}
+    {{#g-grid onDragAndDrop="onDragAndDrop" sortField=sortField sortDir=sortDir content=model as |person|}}
+      {{#g-grid-col heading="First Name" row=person sortPath="firstName"}}
         {{person.firstName}}
-      {{/g-editable-grid-col}}
-      {{#g-editable-grid-col heading="Middle Name" row=person}}
+      {{/g-grid-col}}
+      {{#g-grid-col heading="Middle Name" row=person}}
         {{person.middleName}}
-      {{/g-editable-grid-col}}
-      {{#g-editable-grid-col heading="Last Name" row=person sortPath="lastName"}}
+      {{/g-grid-col}}
+      {{#g-grid-col heading="Last Name" row=person sortPath="lastName"}}
         {{person.lastName}}
-      {{/g-editable-grid-col}}
-      {{#g-editable-grid-col heading="Birthday" row=person sortPath="bday"}}
+      {{/g-grid-col}}
+      {{#g-grid-col heading="Birthday" row=person sortPath="bday"}}
         {{person.bday}}
-      {{/g-editable-grid-col}}
-    {{/g-editable-grid}}
+      {{/g-grid-col}}
+    {{/g-grid}}
 
   {{/g-panel-body}}
-  {{#g-toolbar}}
-    {{g-paginator offset=0 limit=25 total=4}}
-  {{/g-toolbar}}
 {{/g-panel}}
 {{!-- END-SNIPPET--}}
