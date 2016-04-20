@@ -10,7 +10,8 @@
     {{link-to "Buttons" "buttons" class="nav"}} |
     {{link-to "Grids" "grids" (query-params sortField="firstName") class="nav"}} |
     {{link-to "Paginator" "paginator" (query-params offset=0) class="nav"}} |
-    {{link-to "Modals" "modals" class="nav"}}
+    {{link-to "Modals" "modals" class="nav"}} |
+    {{link-to "Grid Selections" "vgrid" class="nav"}}
   </div>
 </div>
 
@@ -26,7 +27,7 @@
 {{#if showModal}}
   {{#g-modal title=modalTitle closeAction="closeModal"}}
     <div class="g-modal-body">
-      <p>{{modalMessage}}</p>
+      <p>{{{modalMessage}}}</p>
     </div>
     <div class="g-modal-footer">
       {{g-button text="OK" action="closeModal"}}

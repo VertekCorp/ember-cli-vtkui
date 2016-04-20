@@ -1,28 +1,26 @@
 {{!-- BEGIN-SNIPPET grids --}}
-{{#g-panel title="Regular Grid"}}
-  {{#g-toolbar}}
-    {{g-button text="Toolbar Button"}}
-  {{/g-toolbar}}
-  {{#g-panel-body}}
+Grids currently support the following features:
+- Remote sorting via query params
+- Drag and Drop to reorder rows
+- Row selection
+- Row Double click
 
-  {{#g-grid onDoubleClick="alertRow" sortField=sortField sortDir=sortDir content=model as |person|}}
-    {{#g-grid-col heading="First Name" row=person sortPath="firstName"}}
-      {{person.firstName}}
-    {{/g-grid-col}}
-    {{#g-grid-col heading="Middle Name" row=person}}
-      {{person.middleName}}
-    {{/g-grid-col}}
-    {{#g-grid-col heading="Last Name" row=person sortPath="lastName"}}
-      {{person.lastName}}
-    {{/g-grid-col}}
-    {{#g-grid-col heading="Birthday" row=person sortPath="bday"}}
-      {{person.bday}}
-    {{/g-grid-col}}
-  {{/g-grid}}
-
-  {{/g-panel-body}}
-  {{#g-toolbar}}
-    {{g-paginator offset=0 limit=25 total=4}}
-  {{/g-toolbar}}
-{{/g-panel}}
+{{#g-grid
+   onDragAndDrop="doDnd"
+   onDoubleClick="doDblClick"
+   sortField=sortField
+   sortDir=sortDir
+   selection=selectedPeople
+   content=model as |person|}}
+  {{g-grid-col selector=true row=person}}
+  {{#g-grid-col heading="First Name" row=person sortPath="firstName"}}
+    {{person.firstName}}
+  {{/g-grid-col}}
+  {{#g-grid-col heading="Last Name" row=person nsortPath="lastName"}}
+    {{person.lastName}}
+  {{/g-grid-col}}
+  {{#g-grid-col heading="Birthday" row=person sortPath="bday"}}
+    {{person.bday}}
+  {{/g-grid-col}}
+{{/g-grid}}
 {{!-- END-SNIPPET--}}

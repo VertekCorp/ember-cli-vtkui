@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('grids');
   this.route('paginator');
   this.route('modals');
+  this.route('vgrid');
 });
 
 export default Router;

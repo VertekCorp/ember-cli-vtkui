@@ -1,1 +1,5 @@
-{{yield}}
+{{#if selector}}
+  {{input type="checkbox" checked=_selected}}
+{{else}}
+  {{yield}}
+{{/if}}

@@ -1,12 +1,17 @@
 <thead>
   <tr>
-    {{#each children as |column|}}
-      {{g-grid-heading heading=column.heading sortPath=column.sortPath sortField=sortField}}
+    {{#each headings as |heading|}}
+      {{#if heading.isSelector}}
+        <th>{{input type="checkbox" checked=allSelected}}</th>
+      {{else}}
+        {{g-grid-heading heading=heading.text sortPath=heading.sortPath sortField=sortField}}
+      {{/if}}
     {{/each}}
   </tr>
 </thead>
 
 {{#if onDragAndDrop}}
+
   {{#sortable-group tagName="tbody" onChange="reorderItems" as |group|}}
     {{#each content as |row index|}}
       {{#g-sortable-item tagName="tr" model=row group=group handle="tr" rowIndex=index}}
@@ -18,16 +23,15 @@
       </tr>
     {{/each}}
   {{/sortable-group}}
+
 {{else}}
+
   <tbody>
     {{#each content as |row index|}}
       {{#g-grid-row rowIndex=index}}
-        {{yield row index}}
+        {{yield row}}
       {{/g-grid-row}}
-      {{else}}
-      <tr>
-        <td>No records found.</td>
-      </tr>
     {{/each}}
   </tbody>
+
 {{/if}}

@@ -6,11 +6,12 @@ export default Ember.Component.extend({
   layout,
   tagName: 'th',
   isSortAsc: true,
+  isSelector: false,
   sortDir: Ember.computed('isSortAsc', function() {
     return this.get('isSortAsc') ? 'ASC' : 'DESC';
   }),
   isSorted: Ember.computed('sortPath', 'sortField', function() {
-    return (this.get('sortField') === this.get('sortPath'));
+    return (Ember.isPresent(this.get('sortPath')) && (this.get('sortField') === this.get('sortPath')));
   }),
 
   _getParent() {
@@ -22,8 +23,13 @@ export default Ember.Component.extend({
     if (sortPath) {
       let parent = this._getParent();
       this.toggleProperty('isSortAsc');
-      parent.set('sortField', sortPath);
-      parent.set('sortDir', this.get('sortDir'));
+      if (parent) {
+        parent.setProperties({
+          sortField: sortPath,
+          sortDir: this.get('sortDir')
+        });
+        parent.updateSelections();
+      }
     }
   }
 });

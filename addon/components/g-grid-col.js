@@ -5,16 +5,26 @@ import Grid from './g-grid';
 export default Ember.Component.extend({
   layout,
   tagName: 'td',
-  sortPath: null,
+
+  selector: false,
+  _selected: false,
+  parent: null,
 
   init() {
     this._super(...arguments);
-    this._registerWithParent();
+    this.set('parent', this.nearestOfType(Grid));
+    this.get('parent').registerChild(this);
   },
 
-  _registerWithParent() {
-    let parent = this.nearestOfType(Grid);
-    parent.registerChild(this);
+  willDestroyElement() {
+    this.get('parent').unregisterChild(this);
+  },
+
+  click() {
+    if (this.get('selector')) {
+      this.toggleProperty('_selected');
+      this.get('parent').updateSelections();
+    }
   },
 
   doubleClick() {
@@ -22,5 +32,4 @@ export default Ember.Component.extend({
       this.sendAction('onDoubleClick', this.get('row'));
     }
   }
-
 });

@@ -8,33 +8,72 @@ export default Ember.Component.extend({
   attributeBindings: ['cellspacing'],
   cellspacing: 0,
 
-  children: null,
-
   init() {
     this._super(...arguments);
-    this.set('childrenKeys', new Ember.A([]));
-    this.set('children', new Ember.A([]));
+    this.setProperties({
+      headings: Ember.A([]),
+      children: Ember.A([]),
+      allSelected: false,
+      sortField: null,
+      sortDir: null,
+      selection: null
+    });
   },
 
   registerChild(child) {
-    if (this.get('onDoubleClick')) {
+    if (this.get('onDoubleClick') && !child.get('selector')) {
       Ember.set(child, 'onDoubleClick', this.get('onDoubleClick'));
     }
+
     Ember.run.debounce(this, function() {
-      let keys = this.get('childrenKeys');
-      let childKey = child.get('heading');
-      if (!keys.contains(childKey)) {
-        keys.push(childKey);
-        this.get('children').pushObject(child);
+      let headings = this.get('headings');
+      let heading = child.get('heading');
+      if (!headings.findBy('text', heading)) {
+        headings.pushObject(Ember.Object.create({
+          text: heading,
+          sortPath: child.get('sortPath') || '',
+          isSelector: child.get('selector')
+        }));
       }
+      this.get('children').pushObject(child);
     }, 150);
   },
 
+  unregisterChild(child) {
+    this.get('children').removeObject(child);
+  },
+
+  allSelectedDidChange: Ember.observer('allSelected', function() {
+    let selection = this.get('selection');
+    this.get('children').forEach((c) => {
+      if (c.get('selector')) {
+        c.set('_selected', this.get('allSelected'));
+      }
+    });
+    this.updateSelections();
+  }),
+
+  updateSelections() {
+    let selection = this.get('selection');
+    if (selection) {
+      selection.clear();
+      this.get('children').forEach((c) => {
+        if (c.get('selector')) {
+          if (c.get('_selected')) {
+            selection.pushObject(c.get('row'));
+          } else {
+            selection.removeObject(c.get('row'));
+          }
+        }
+      });
+    }
+  },
+
   actions: {
-    reorderItems(itemModels, draggedModel) {
-      this.set('content', itemModels);
-      this.set('content.justDragged', draggedModel);
-      this.sendAction('onDragAndDrop', itemModels, draggedModel);
+    reorderItems(rows, draggedRow) {
+      this.set('content', rows);
+      this.set('content.justDragged', draggedRow);
+      this.sendAction('onDragAndDrop', rows, draggedRow);
     }
   }
 
