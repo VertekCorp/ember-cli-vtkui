@@ -13,10 +13,7 @@ export default Ember.Component.extend({
     this.setProperties({
       headings: Ember.A([]),
       children: Ember.A([]),
-      allSelected: false,
-      sortField: null,
-      sortDir: null,
-      selection: null
+      allSelected: false
     });
   },
 
