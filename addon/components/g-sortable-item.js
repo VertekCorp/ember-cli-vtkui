@@ -6,6 +6,6 @@ export default SortableItem.extend({
   layout,
   classNameBindings: ['isOdd:tr-odd:tr-even', 'isDragging', 'isDropping'],
   isOdd: Ember.computed('rowIndex', function() {
-    return (this.get('rowIndex') % 2 == 0);
+    return (this.get('rowIndex') % 2 === 0);
   })
 });
