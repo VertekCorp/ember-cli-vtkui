@@ -42,7 +42,7 @@ export default Ember.Component.extend({
   },
 
   allSelectedDidChange: Ember.observer('allSelected', function() {
-    let selection = this.get('selection');
+    // let selection = this.get('selection');
     this.get('children').forEach((c) => {
       if (c.get('selector') && !c.get('disabled')) {
         c.set('_selected', this.get('allSelected'));
