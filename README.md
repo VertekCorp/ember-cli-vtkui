@@ -1,6 +1,4 @@
-# ember-cli-vtkui
-
-[![Build Status](https://travis-ci.org/rynam0/ember-cli-vtkui.svg?branch=master)](https://travis-ci.org/rynam0/ember-cli-vtkui)
+# Ember-cli-vtkui
 
 This README outlines the details of collaborating on this Ember addon.
 
@@ -12,7 +10,7 @@ This README outlines the details of collaborating on this Ember addon.
 
 ## Running
 
-* `ember server`
+* `ember serve`
 * Visit your app at http://localhost:4200.
 
 ## Running Tests
@@ -25,4 +23,4 @@ This README outlines the details of collaborating on this Ember addon.
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
