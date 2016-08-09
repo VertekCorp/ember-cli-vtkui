@@ -25,3 +25,9 @@
 	line-height: 16px;
 	display: inline-block;
 }
+
+.g-input-field[disabled] {
+	background: #eee;
+	border-color: #ccc;
+	color: gray;
+}
