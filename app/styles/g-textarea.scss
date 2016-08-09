@@ -17,3 +17,9 @@
   border: 1px solid $borderColor;
   background: linear-gradient(180deg, whitesmoke 5%, white 95%);
 }
+
+.g-textarea textarea[disabled] {
+	background: #eee;
+	border-color: #ccc;
+	color: gray;
+}
