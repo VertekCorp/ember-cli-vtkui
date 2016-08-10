@@ -2,7 +2,7 @@
 
 The ember-cli-vtkui project is an EmberJS Addon focused on providing components and styling to support a team's desire to incrementally replace legacy GWT / GXT UI code with standalone EmberJS applications.
 
-The end goal would be to target Ember-Engines as a full GWT/GXT replacement.
+The end goal would be to target [Ember-Engines](https://github.com/dgeb/ember-engines) as a full GWT/GXT replacement.
 
 ### About
 
