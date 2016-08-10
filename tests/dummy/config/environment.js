@@ -39,7 +39,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    rootURL: '/ember-cli-vtkui/',
   }
 
   return ENV;
