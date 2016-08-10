@@ -1,0 +1,55 @@
+.pika-single.g-theme {
+  color: #000;
+  border: 1px solid #a3bad9;
+  position: absolute;
+}
+
+.g-theme .pika-label, .g-theme .pika-title {
+  background-color: #1d3a70;
+  color: #fff;
+  font-size: 11px;
+}
+
+.g-theme .pika-lendar {
+  margin: 1px;
+  width: 190px;
+}
+
+.g-theme .pika-prev, .g-theme .is-rtl .pika-next {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAQAAACGG/bgAAAAQ0lEQVR4Ae3KIQ4AIBTD0N0/IeHGI3UIRA3ut/Zl+ltXc5++htVAmIAwAWECwgSEKbgthEoIlRAqIVRCqINQB9nDgQd7ktwFo6UpWQAAAABJRU5ErkJggg==');
+}
+
+.g-theme .pika-next, .g-theme .is-rtl .pika-prev {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAQAAACGG/bgAAAAP0lEQVQ4y+3TMQoAMAgEwfwfAvvjTZ1uGzuvHhBPPGczEG+FRqqRaqQaqUaqkX6QBmmjacvQ6qEVTjsh+xizebvlaWptGXZAAAAAAElFTkSuQmCC');
+}
+
+.g-theme .pika-table th {
+  color: #233D6D;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.g-theme .pika-button:hover {
+  color: #000 !important;
+  background: #ddecfe !important;
+}
+
+.g-theme .is-selected .pika-button {
+  color: #000 !important;
+  background: #dfecfb;
+}
+
+.g-theme .is-today .pika-button {
+  background: #dfecfb;
+  color: #8b0000 !important;
+}
+
+.g-theme .pika-button {
+  color: #000 !important;
+  font-size: 11px;
+}
+
+.today-button {
+  padding: 2px;
+  text-align: center;
+}

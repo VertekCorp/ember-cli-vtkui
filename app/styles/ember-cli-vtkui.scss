@@ -33,6 +33,7 @@
 @import "g-toolbar";
 @import "tooltips";
 @import "fieldset";
+@import "g-pikaday";
 
 /** needed in a gxt app to allow all containers to fill parents.*/
 .ember-application, .ember-application > .ember-view, .liquid-container, .liquid-child {
