@@ -4,6 +4,7 @@ const { Component, defineProperty, computed } = Ember;
 
 export default Component.extend({
   layout,
+  classNames: ['g-input'],
 
   init() {
     this._super(...arguments);
