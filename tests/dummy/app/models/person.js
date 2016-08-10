@@ -16,6 +16,12 @@ const Validations = buildValidations({
       validator('length', { min: 2 })
     ]
   },
+  bday: {
+    debounce: 300,
+    validators: [
+      validator('presence', true)
+    ]
+  },
   robot: validator('presence', true),
   notes: validator('presence', true)
 });

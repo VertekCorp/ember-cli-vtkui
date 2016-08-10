@@ -11,7 +11,8 @@ module.exports = {
         { name: 'ember-modal-dialog', target: '0.8.8' },
         { name: 'ember-cli-sass', target: '5.3.1' },
         { name: 'ember-sortable', target: '1.8.1' },
-        { name: 'ember-concurrency', target: '0.6.1'}
+        { name: 'ember-concurrency', target: '0.6.1'},
+        { name: 'ember-pikaday', target: '2.1.0'}
       ]
     });
   }

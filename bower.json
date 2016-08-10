@@ -4,6 +4,7 @@
     "ember": "2.7.0",
     "ember-cli-shims": "0.1.1",
     "ember-qunit-notifications": "0.1.0",
-    "selectize": "miguelcobain/selectize.js#master"
+    "selectize": "miguelcobain/selectize.js#master",
+    "pikaday": "^1.4.0"
   }
 }
