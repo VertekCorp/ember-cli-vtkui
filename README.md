@@ -1,25 +1,31 @@
-# Ember-cli-vtkui
+# ember-cli-vtkui
 
-This README outlines the details of collaborating on this Ember addon.
+The ember-cli-vtkui project is an EmberJS Addon focused on providing components and styling to support a team's desire to incrementally replace legacy GWT / GXT UI code with standalone EmberJS applications.
 
-## Installation
+The end goal would be to target [Ember-Engines](https://github.com/dgeb/ember-engines) as a full GWT/GXT replacement.
+
+### About
+
+Read more about the addons, components, and strategies we use to incrementally introduce EmberJS into our existing GWT/GXT applications on the project's  [DEMO](http://rynam0.github.io/ember-cli-vtkui/) page.
+
+### Installation
 
 * `git clone` this repository
 * `npm install`
 * `bower install`
 
-## Running
+### Running
 
 * `ember serve`
 * Visit your app at http://localhost:4200.
 
-## Running Tests
+### Running Tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
+* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building
+### Building
 
 * `ember build`
 
