@@ -20,12 +20,15 @@ export default PikadayInput.extend(PikadayMixin, {
   },
 
   onPikadayRedraw: function() {
+    this._super(...arguments);
     let that = this;
     let $pikadayEl = Ember.$(this.get('pikaday').el);
-    let $btn = Ember.$('<button class="g-button">Today</button>').click(function() {
-      that.get('pikaday').setDate(new Date());
-    });
-    let $wrapper = Ember.$('<div class="today-button"></div>').append($btn);
-    $pikadayEl.append($wrapper);
+    if (Ember.$($pikadayEl).find('.g-button').length === 0) {
+      let $btn = Ember.$('<button class="g-button">Today</button>').click(function() {
+        that.get('pikaday').setDate(new Date());
+      });
+      let $wrapper = Ember.$('<div class="today-button"></div>').append($btn);
+      $pikadayEl.append($wrapper);
+    }
   }
 });
