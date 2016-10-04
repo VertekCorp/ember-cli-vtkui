@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-vtkui",
-  "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "An Ember Addon to support incremental replacement of GXT 2.2.5 UI code with Ember apps",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rynam0/ember-cli-vtkui"
+    "url": "https://github.com/vertekcorp/ember-cli-vtkui"
   },
   "engines": {
     "node": ">= 0.10.0"

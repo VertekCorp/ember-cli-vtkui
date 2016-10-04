@@ -6,7 +6,7 @@ The end goal would be to target [Ember-Engines](https://github.com/dgeb/ember-en
 
 ### About
 
-Read more about the addons, components, and strategies we use to incrementally introduce EmberJS into our existing GWT/GXT applications on the project's  [DEMO](http://rynam0.github.io/ember-cli-vtkui/) page.
+Read more about the addons, components, and strategies we use to incrementally introduce EmberJS into our existing GWT/GXT applications on the project's  [DEMO](http://vertekcorp.github.io/ember-cli-vtkui/) page.
 
 ### Installation
 
