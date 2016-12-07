@@ -1,7 +1,39 @@
 {{#g-panel title="Grid"}}
   {{#g-panel-body}}
 
-    {{#g-grid
+<p>MY GRID</p>
+{{#my-grid content=model as |grid|}}
+  {{#grid.td as |person|}}{{person.firstName}}{{/grid.td}}
+  {{#grid.td as |person|}}{{person.lastName}}{{/grid.td}}
+{{/my-grid}}
+
+
+<p>Grid</p>
+  {{#g-grid
+     onDragAndDrop="doDnd"
+     onDoubleClick="doDblClick"
+     sortField=sortField
+     sortDir=sortDir
+     selection=selectedPeople
+     content=model as |person|}}
+    {{#g-grid-col dragHandle=true heading="&varr;" row=person}}
+      ...
+    {{/g-grid-col}}
+    {{g-grid-col selector=true row=person}}
+    {{#g-grid-col heading="First Name" row=person sortPath="firstName"}}
+      {{person.firstName}}
+    {{/g-grid-col}}
+    {{#g-grid-col heading="Last Name" row=person sortPath="lastName"}}
+      {{person.lastName}}
+    {{/g-grid-col}}
+    {{#g-grid-col heading="Birthday" row=person sortPath="bday"}}
+      {{person.bday}}
+    {{/g-grid-col}}
+  {{/g-grid}}
+
+
+
+    {{!-- {{#g-grid
        onDragAndDrop="doDnd"
        onDoubleClick="doDblClick"
        sortField=sortField
@@ -21,21 +53,21 @@
       {{#g-grid-col heading="Birthday" row=person sortPath="bday"}}
         {{person.bday}}
       {{/g-grid-col}}
-    {{/g-grid}}
+    {{/g-grid}} --}}
 
-    <br/>
+    {{!-- <br/>
     <strong>You Selected:</strong><br/>
     {{#each selectedPeople as |person|}}
       {{person.firstName}} {{person.lastName}} <br/>
     {{/each}}
 
-    <hr/>
+    <hr/> --}}
 
-    {{#g-panel title="Example"}}
+    {{!-- {{#g-panel title="Example"}}
       {{#g-panel-body}}
         {{code-snippet name="grids.hbs"}}
       {{/g-panel-body}}
-    {{/g-panel}}
+    {{/g-panel}} --}}
 
   {{/g-panel-body}}
   {{#g-toolbar}}

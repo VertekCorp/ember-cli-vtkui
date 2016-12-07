@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-vtkui/components/my-grid-col';
