@@ -1,7 +1,14 @@
 {{#if selector}}
   {{input type="checkbox" checked=_selected disabled=disabled}}
-{{!-- {{else if dragHandle}}
-  dragMe --}}
 {{else}}
-  {{yield}}
+  {{yield (hash
+    myfriend="bubba"
+    string-filter=(component 'string-filter')
+  )}}
+  {{!-- {{yield (hash
+    filter=(component 'string-filter')
+    number-filter=(component 'number-filter')
+    date-filter=(component 'date-filter')
+    boolean-filter=(component 'boolean-filter')
+  )}} --}}
 {{/if}}

@@ -30,7 +30,10 @@ export default Ember.Component.extend({
           text: heading,
           sortPath: child.get('sortPath') || '',
           isSelector: child.get('selector'),
-          dragHandle: child.get('dragHandle')
+          dragHandle: child.get('dragHandle'),
+          'string-filter': child.get('string-filter'),
+          'date-filter': child.get('date-filter'),
+          queryParam: child.get('queryParam')
         }));
       }
       this.get('children').pushObject(child);
@@ -72,6 +75,10 @@ export default Ember.Component.extend({
       this.set('content', rows);
       this.set('content.justDragged', draggedRow);
       this.sendAction('onDragAndDrop', rows, draggedRow);
+    },
+
+    onFilter(queryParam, query) {
+      this.get('targetObject').set(queryParam, query);
     }
   }
 

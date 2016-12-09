@@ -4,7 +4,9 @@
       {{#if heading.isSelector}}
         <th>{{input type="checkbox" checked=allSelected}}</th>
       {{else}}
-        {{g-grid-heading heading=heading.text sortPath=heading.sortPath sortField=sortField}}
+        {{g-grid-heading heading=heading.text sortPath=heading.sortPath sortField=sortField
+          string-filter=heading.string-filter date-filter=heading.date-filter
+          queryParam=heading.queryParam onFilter="onFilter"}}
       {{/if}}
     {{/each}}
   </tr>

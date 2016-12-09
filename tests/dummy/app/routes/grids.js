@@ -13,7 +13,9 @@ export default Ember.Route.extend({
 
   queryParams: {
     sortField: { refreshModel: true },
-    sortDir: { refreshModel: true }
+    sortDir: { refreshModel: true },
+    firstName: { refreshModel: true },
+    lastName: { refreshModel: true }
   },
 
   setupController(controller) {

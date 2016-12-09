@@ -1,24 +1,61 @@
 .sort-indicator {
-  float: right;
-  height: 12px;
-  width: 12px;
+  $size: 10px;
+  height: $size;
+  width: $size;
+  display: inline-block;
 }
 
 .up-arrow {
+  $size: 5px;
 	width: 0;
 	height: 0;
-  border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-  border-bottom: 6px solid $darkBlue;
+  border-left: $size solid transparent;
+	border-right: $size solid transparent;
+  border-bottom: $size solid #6190cd;
   display: inline-block;
   cursor: pointer;
 }
 .down-arrow {
+  $size: 5px;
 	width: 0;
 	height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid $darkBlue;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid #6190cd;
   display: inline-block;
   cursor: pointer;
+}
+
+
+/*** FILTERS ***/
+.g-filter {
+  padding: 4px;
+  background: white;
+  box-shadow: 1px 1px #ccc;
+  border: 1px solid #a9bfd3;
+  position: absolute;
+  visibility: hidden;
+}
+.filter-wrapper:hover .g-filter {
+  visibility: visible;
+}
+
+.heading-wrapper {
+  padding-left: 4px;
+}
+.filter-indicator {
+  $size: 10px;
+  height: $size;
+  width: $size;
+  float: right;
+  padding-right: 4px;
+  visibility: hidden;
+  cursor: pointer;
+}
+.g-grid th:hover .filter-indicator {
+  visibility: visible;
+}
+
+.g-filter .g-input .g-input-field-label {
+  min-width: 1px;
 }

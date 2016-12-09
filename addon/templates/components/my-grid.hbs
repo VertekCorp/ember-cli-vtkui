@@ -1,7 +1,0 @@
-{{#each content as |row|}}
-  <tr>
-    {{yield (hash
-      td=(component 'my-grid-col' row=row)
-    )}}
-  </tr>
-{{/each}}

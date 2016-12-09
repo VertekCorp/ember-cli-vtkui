@@ -1,4 +1,4 @@
-{{{heading}}}
+{{!-- {{{heading}}}
 {{#if isSorted}}
   {{#if isSortAsc}}
     <div class="up-arrow sort-indicator"></div>
@@ -8,3 +8,39 @@
 {{else}}
   <span class="sort-indicator">&nbsp;</span>
 {{/if}}
+--}}
+
+{{!-- <div class="heading-wrapper" style="border:1px solid red;"> --}}
+<div class="heading-wrapper">
+  <span class="heading-label">
+    {{{heading}}}
+    {{#if isSorted}}
+      {{#if isSortAsc}}
+        <div class="up-arrow sort-indicator"></div>
+      {{else}}
+        <div class="down-arrow sort-indicator"></div>
+      {{/if}}
+    {{else}}
+      <span class="sort-indicator">&nbsp;</span>
+    {{/if}}
+  </span>
+
+  {{#if isFiltered}}
+    <span class="filter-wrapper">
+      <span class="filter-indicator" {{action "toggleFilter" on="click"}}>🔍</span>
+      {{#if string-filter}}
+        {{string-filter queryParam=queryParam onChange="queryChanged"}}
+      {{else if date-filter}}
+        {{date-filter queryParam=queryParam onChange="queryChanged"}}
+      {{/if}}
+    </span>
+  {{/if}}
+</div>
+
+
+
+{{!-- {{#if string-filter}}
+  {{string-filter queryParam=queryParam onChange="queryChanged"}}
+{{else if date-filter}}
+  {{date-filter queryParam=queryParam onChange="queryChanged"}}
+{{/if}} --}}

@@ -1,14 +1,26 @@
 {{#g-panel title="Grid"}}
   {{#g-panel-body}}
 
-<p>MY GRID</p>
+{{!-- <p>MY GRID</p>
 {{#my-grid content=model as |grid|}}
-  {{#grid.td as |person|}}{{person.firstName}}{{/grid.td}}
-  {{#grid.td as |person|}}{{person.lastName}}{{/grid.td}}
-{{/my-grid}}
+  {{#grid.column as |person|}}
+    {{person.firstName}}
+  {{/grid.column}}
+  {{#grid.column as |person|}}
+    {{person.lastName}}
+  {{/grid.column}}
+{{/my-grid}} --}}
 
 
-<p>Grid</p>
+{{!-- {{#my-grid content=model as |grid|}}
+  {{#grid.column as |person|}}
+    {{person.firstName}}
+  {{/grid.column}}
+  {{#grid.column as |person|}}
+    {{person.lastName}}
+  {{/grid.column}}
+{{/my-grid}} --}}
+
   {{#g-grid
      onDragAndDrop="doDnd"
      onDoubleClick="doDblClick"
@@ -20,13 +32,13 @@
       ...
     {{/g-grid-col}}
     {{g-grid-col selector=true row=person}}
-    {{#g-grid-col heading="First Name" row=person sortPath="firstName"}}
+    {{#g-grid-col heading="First Name" row=person sortPath="firstName" string-filter=true queryParam="firstName"}}
       {{person.firstName}}
     {{/g-grid-col}}
-    {{#g-grid-col heading="Last Name" row=person sortPath="lastName"}}
+    {{#g-grid-col heading="Last Name" row=person sortPath="lastName" string-filter=true queryParam="lastName"}}
       {{person.lastName}}
     {{/g-grid-col}}
-    {{#g-grid-col heading="Birthday" row=person sortPath="bday"}}
+    {{#g-grid-col heading="Birthday" row=person sortPath="bday" date-filter=true queryParam="bday"}}
       {{person.bday}}
     {{/g-grid-col}}
   {{/g-grid}}
