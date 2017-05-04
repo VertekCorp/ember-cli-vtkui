@@ -1,3 +1,5 @@
-{{g-date label="=" placeholder="Filter query..."}} <br/>
-{{g-date label="<" placeholder="Filter query..."}} <br/>
-{{g-date label=">" placeholder="Filter query..."}} <br/>
+{{#each filters as |filter|}}
+  {{!-- {{g-date label=filter.label value=query change=(action "queryChanged") placeholder="Filter query..."}} --}}
+  {{g-date label=filter.label value=filter.value change=(action "queryChanged") placeholder="Filter query..."}}
+  <br/>
+{{/each}}

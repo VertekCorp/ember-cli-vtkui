@@ -1,14 +1,19 @@
 import Ember from 'ember';
 
+
+const MODELS = Ember.A([
+  Ember.Object.create({id: 1, firstName: 'Joe', lastName: 'Dev', bday: '2000-02-29' }),
+  Ember.Object.create({id: 2, firstName: 'Jane', lastName: 'Doe', bday: '1974-01-15' }),
+  Ember.Object.create({id: 3, firstName: 'Jar', lastName: 'Binks', bday: null }),
+  Ember.Object.create({id: 4, firstName: 'Luke', lastName: 'Skywalker', bday: '1978-07-01' }),
+  Ember.Object.create({id: 5, firstName: 'Darth', lastName: 'Vader', bday: '1978-06-01' })
+]);
+
+
 export default Ember.Route.extend({
-  model() {
-    return Ember.A([
-      Ember.Object.create({id: 1, firstName: 'Joe', lastName: 'Dev', bday: '2000-02-29' }),
-      Ember.Object.create({id: 2, firstName: 'Jane', lastName: 'Doe', bday: '1974-01-15' }),
-      Ember.Object.create({id: 3, firstName: 'Jar', lastName: 'Binks', bday: null }),
-      Ember.Object.create({id: 4, firstName: 'Luke', lastName: 'Skywalker', bday: '1978-07-01' }),
-      Ember.Object.create({id: 5, firstName: 'Darth', lastName: 'Vader', bday: '1978-06-01' })
-    ]);
+  model(params) {
+    console.log('params', JSON.stringify(params));
+    return MODELS;
   },
 
   queryParams: {

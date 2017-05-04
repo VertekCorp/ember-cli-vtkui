@@ -1,25 +1,10 @@
 {{#g-panel title="Grid"}}
+
+  {{#g-toolbar}}
+    {{g-button text="Clear Filters" action="clearFilters"}}
+  {{/g-toolbar}}
+
   {{#g-panel-body}}
-
-{{!-- <p>MY GRID</p>
-{{#my-grid content=model as |grid|}}
-  {{#grid.column as |person|}}
-    {{person.firstName}}
-  {{/grid.column}}
-  {{#grid.column as |person|}}
-    {{person.lastName}}
-  {{/grid.column}}
-{{/my-grid}} --}}
-
-
-{{!-- {{#my-grid content=model as |grid|}}
-  {{#grid.column as |person|}}
-    {{person.firstName}}
-  {{/grid.column}}
-  {{#grid.column as |person|}}
-    {{person.lastName}}
-  {{/grid.column}}
-{{/my-grid}} --}}
 
   {{#g-grid
      onDragAndDrop="doDnd"
@@ -32,7 +17,7 @@
       ...
     {{/g-grid-col}}
     {{g-grid-col selector=true row=person}}
-    {{#g-grid-col heading="First Name" row=person sortPath="firstName" string-filter=true queryParam="firstName"}}
+    {{#g-grid-col heading="First Name" row=person sortPath="firstName" queryParam="firstName"}}
       {{person.firstName}}
     {{/g-grid-col}}
     {{#g-grid-col heading="Last Name" row=person sortPath="lastName" string-filter=true queryParam="lastName"}}
@@ -40,6 +25,9 @@
     {{/g-grid-col}}
     {{#g-grid-col heading="Birthday" row=person sortPath="bday" date-filter=true queryParam="bday"}}
       {{person.bday}}
+    {{/g-grid-col}}
+    {{#g-grid-col heading="hello"}}
+      something static
     {{/g-grid-col}}
   {{/g-grid}}
 

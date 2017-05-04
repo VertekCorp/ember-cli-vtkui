@@ -25,9 +25,8 @@ export default Component.extend({
   },
 
   click(e) {
-    console.log(e.target);
     const target = Ember.$(e.target);
-    if (target.hasClass('filter-indicator') || target.hasClass('g-input-field')) {
+    if (target.hasClass('filter-indicator') || target.hasClass('g-input-field') || target.hasClass('clear-filter-btn')) {
       return;
     }
 
@@ -47,11 +46,8 @@ export default Component.extend({
   },
 
   actions: {
-    queryChanged(query) {
-      this.sendAction('onFilter', this.get('queryParam'), query);
-    },
-    toggleFilter() {
-      console.log('heard toggleFilter');
+    queryChanged(queryParam, query) {
+      this.sendAction('onFilter', queryParam, query);
     }
   }
 });

@@ -1,5 +1,9 @@
 @import "variables";
 
+.hidden {
+  display: none;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -34,6 +38,7 @@
 @import "tooltips";
 @import "fieldset";
 @import "g-pikaday";
+@import "date-filter";
 
 /** needed in a gxt app to allow all containers to fill parents.*/
 .ember-application, .ember-application > .ember-view, .liquid-container, .liquid-child {

@@ -34,10 +34,10 @@
   box-shadow: 1px 1px #ccc;
   border: 1px solid #a9bfd3;
   position: absolute;
-  visibility: hidden;
+  margin-top: 6px;
 }
-.filter-wrapper:hover .g-filter {
-  visibility: visible;
+.filter-wrapper {
+  display: inline;
 }
 
 .heading-wrapper {
@@ -49,13 +49,18 @@
   width: $size;
   float: right;
   padding-right: 4px;
-  visibility: hidden;
+  // visibility: hidden;
   cursor: pointer;
 }
-.g-grid th:hover .filter-indicator {
-  visibility: visible;
-}
+// .g-grid th:hover .filter-indicator {
+//   visibility: visible;
+// }
 
 .g-filter .g-input .g-input-field-label {
   min-width: 1px;
+}
+
+.clear-filter-btn {
+  min-width: 15px;
+  color: #15428b;
 }

@@ -1,0 +1,6 @@
+<span class="filter-indicator">🔍</span>
+{{#if string-filter}}
+  {{string-filter queryParam=queryParam onChange=onChange class=visibilityClass}}
+{{else if date-filter}}
+  {{date-filter queryParam=queryParam onChange=onChange class=visibilityClass}}
+{{/if}}
