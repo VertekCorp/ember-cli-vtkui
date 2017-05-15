@@ -3,7 +3,7 @@ import layout from '../templates/components/g-modal';
 
 export default Ember.Component.extend({
   layout,
-  renderInPlace: true,
+  renderInPlace: false,
   actions: {
     closeModal() {
       this.sendAction('closeAction');
