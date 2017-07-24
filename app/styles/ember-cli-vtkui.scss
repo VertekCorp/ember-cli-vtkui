@@ -18,6 +18,12 @@
   justify-content: space-between;
 }
 
+.space-around {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 @import "g-button";
 @import "g-grid-heading";
 @import "g-grid-row";
@@ -34,6 +40,7 @@
 @import "tooltips";
 @import "fieldset";
 @import "g-pikaday";
+@import "g-checkbox";
 
 /** needed in a gxt app to allow all containers to fill parents.*/
 .ember-application, .ember-application > .ember-view, .liquid-container, .liquid-child {

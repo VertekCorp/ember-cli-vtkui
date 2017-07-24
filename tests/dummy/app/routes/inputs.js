@@ -4,7 +4,7 @@ import Person from '../models/person';
 export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
-      person: Person.create(Ember.getOwner(this).ownerInjection(), {}),
+      person: Person.create(Ember.getOwner(this).ownerInjection(), { likesCats: true }),
       robots: Ember.A([
         {id: 1, name: 'R2D2'},
         {id: 2, name: 'C3PO'},

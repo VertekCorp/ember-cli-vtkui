@@ -8,4 +8,5 @@ fieldset {
 fieldset legend {
   @extend .bold;
   color: #154289;
+  font-family: $fontFamily;
 }
