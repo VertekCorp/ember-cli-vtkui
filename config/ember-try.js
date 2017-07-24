@@ -6,7 +6,7 @@ module.exports = {
       bower: {
         dependencies: { }
       }
-    },
+    }/*,
     {
       name: 'ember-release',
       bower: {
@@ -39,6 +39,6 @@ module.exports = {
           'ember': 'canary'
         }
       }
-    }
+    }*/
   ]
 };

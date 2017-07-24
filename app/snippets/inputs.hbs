@@ -7,6 +7,8 @@
       {{g-input label="Middle Name" model=person path="middleName"}} <br/>
       {{g-input label="Last Name" model=person path="lastName"}} <br/>
       {{g-date label="Birthday" model=person path="bday"}} <br/>
+      {{g-checkbox label="Likes Cats" checked=person.likesCats}} <br/>
+
       {{g-selectize label="Robot" content=robots optionValuePath="content.id" optionLabelPath="content.name"
         selection=person.robot model=person path="robot"}} <br/>
 

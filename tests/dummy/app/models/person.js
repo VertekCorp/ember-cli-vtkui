@@ -32,5 +32,6 @@ export default Ember.Object.extend(Validations, {
   middleName: null,
   lastName: null,
   bday: null,
-  robot: null
+  robot: null,
+  likesCats: null
 });

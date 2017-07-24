@@ -8,7 +8,8 @@
         {{g-input label="First Name" model=person path="firstName"}} <br/>
         {{g-input label="Middle Name" model=person path="middleName"}} <br/>
         {{g-input label="Last Name" model=person path="lastName"}} <br/>
-        {{g-date label="Birthday" model=person path="bday"}}
+        {{g-date label="Birthday" model=person path="bday"}} <br/>
+        {{g-checkbox label="Likes Cats" checked=person.likesCats}}
         <br/><br/>
       </fieldset>
 
@@ -21,14 +22,12 @@
 
         {{g-textarea label="Notes" model=person path="notes"}}
 
-
         {{g-selectize label="Make" content=carMakes optionValuePath="content.id" optionLabelPath="content.name"
           onChange="setCarModels" selection=selectedMake}} <br/>
         {{g-selectize label="Model" content=selectedModels optionValuePath="content.id" optionLabelPath="content.name"
           selection=selectedModel}}
         <br/><br/>
       </fieldset>
-
 
       {{g-button type="submit" text="Save" disabled=person.validations.isInvalid}}
     </form>
