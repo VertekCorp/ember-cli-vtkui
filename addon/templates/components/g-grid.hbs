@@ -4,7 +4,7 @@
       {{#if heading.isSelector}}
         <th>{{input type="checkbox" checked=allSelected}}</th>
       {{else}}
-        {{g-grid-heading heading=heading.text sortPath=heading.sortPath sortField=sortField}}
+        {{g-grid-heading heading=heading.text sortPath=heading.sortPath sortField=sortField sortDir=sortDir}}
       {{/if}}
     {{/each}}
   </tr>

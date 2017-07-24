@@ -5,11 +5,10 @@ import Grid from './g-grid';
 export default Ember.Component.extend({
   layout,
   tagName: 'th',
-  isSortAsc: true,
-  isSelector: false,
-  sortDir: Ember.computed('isSortAsc', function() {
-    return this.get('isSortAsc') ? 'ASC' : 'DESC';
+  isSortAsc: Ember.computed('sortDir', function() {
+    return this.get('sortDir') === 'ASC';
   }),
+  isSelector: false,
   isSorted: Ember.computed('sortPath', 'sortField', function() {
     return (Ember.isPresent(this.get('sortPath')) && (this.get('sortField') === this.get('sortPath')));
   }),
@@ -23,6 +22,11 @@ export default Ember.Component.extend({
     if (sortPath) {
       let parent = this._getParent();
       this.toggleProperty('isSortAsc');
+      if (this.get('isSortAsc')) {
+        this.set('sortDir', 'ASC');
+      } else {
+        this.set('sortDir', 'DESC');
+      }
       if (parent) {
         parent.setProperties({
           sortField: sortPath,
@@ -32,4 +36,5 @@ export default Ember.Component.extend({
       }
     }
   }
+
 });
