@@ -1,33 +1,19 @@
-import startApp from '../../helpers/start-app';
-import { module, test, andThen, click, visit } from 'qunit';
-import { run } from '@ember/runloop';
+import { setupApplicationTest } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { click, visit } from '@ember/test-helpers';
 import $ from 'jquery';
 
-let App;
+module('Acceptance | components/g date', function(hooks) {
+  setupApplicationTest(hooks);
 
-module('Acceptance - Date', {
-  setup() {
-    App = startApp();
-  },
-  teardown() {
-    run(App, 'destroy');
-  }
-});
-
-test('calendar opens when date input is focused', assert => {
-  visit('/inputs');
-
-  andThen(function() {
+  test('calendar opens when date input is focused', async function(assert) {
+    await visit('/inputs');
     let $calendar = $('body > .pika-single');
     assert.equal($calendar.length, 1, 'calendar is present');
     assert.ok($calendar.hasClass('is-hidden'), 'calendar is hidden');
 
-    click('.g-date');
-
-    andThen(function() {
-      let $calendar = $('body > .pika-single');
-      assert.equal($calendar.length, 1, 'calendar is present');
-      assert.notOk($calendar.hasClass('is-hidden'), 'calendar is showing');
-    });
+    await click('.g-date');
+    assert.equal($calendar.length, 1, 'calendar is present');
+    assert.notOk($calendar.hasClass('is-hidden'), 'calendar is showing');
   });
 });

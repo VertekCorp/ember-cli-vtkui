@@ -1,2 +1,5 @@
 {{text}}
-{{tooltip-on-component text=tooltipContent side='right'}}
+{{!-- {{test-tooltip text=tooltipContent side=tooltipPlace}} --}}
+{{#attach-tooltip animation='fade' placement=tooltipPlace arrow=true}}
+   {{tooltipContent}}
+{{/attach-tooltip}}

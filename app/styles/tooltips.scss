@@ -1,6 +1,5 @@
 /** make sure tooltips are on top GXT modal windows.*/
-.ember-tooltip {
+.ember-attacher-tooltip {
   z-index: 10000;
-  height: auto !important;
-  overflow: visible !important;
+  font-weight: bold;
 }
