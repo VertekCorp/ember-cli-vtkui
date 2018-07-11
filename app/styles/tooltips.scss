@@ -1,4 +1,6 @@
 /** make sure tooltips are on top GXT modal windows.*/
-.tooltip {
-   z-index: 10000;
+.ember-tooltip {
+  z-index: 10000;
+  height: auto !important;
+  overflow: visible !important;
 }

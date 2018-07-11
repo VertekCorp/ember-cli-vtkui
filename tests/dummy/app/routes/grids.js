@@ -1,13 +1,15 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { A } from '@ember/array';
+import EmberObject from '@ember/object';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
-    return Ember.A([
-      Ember.Object.create({id: 1, firstName: 'Joe', lastName: 'Dev', bday: '2000-02-29' }),
-      Ember.Object.create({id: 2, firstName: 'Jane', lastName: 'Doe', bday: '1974-01-15' }),
-      Ember.Object.create({id: 3, firstName: 'Jar', lastName: 'Binks', bday: null }),
-      Ember.Object.create({id: 4, firstName: 'Luke', lastName: 'Skywalker', bday: '1978-07-01' }),
-      Ember.Object.create({id: 5, firstName: 'Darth', lastName: 'Vader', bday: '1978-06-01' })
+    return A([
+      EmberObject.create({id: 1, firstName: 'Joe', lastName: 'Dev', bday: '2000-02-29' }),
+      EmberObject.create({id: 2, firstName: 'Jane', lastName: 'Doe', bday: '1974-01-15' }),
+      EmberObject.create({id: 3, firstName: 'Jar', lastName: 'Binks', bday: null }),
+      EmberObject.create({id: 4, firstName: 'Luke', lastName: 'Skywalker', bday: '1978-07-01' }),
+      EmberObject.create({id: 5, firstName: 'Darth', lastName: 'Vader', bday: '1978-06-01' })
     ]);
   },
 
@@ -18,7 +20,7 @@ export default Ember.Route.extend({
 
   setupController(controller) {
     this._super(...arguments);
-    controller.set('selectedPeople', Ember.A([]));
+    controller.set('selectedPeople', A([]));
   },
 
   actions: {

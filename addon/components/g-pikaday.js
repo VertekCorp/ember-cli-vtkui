@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import $ from 'jquery';
 import PikadayInput from 'ember-pikaday/components/pikaday-input';
 import PikadayMixin from 'ember-pikaday/mixins/pikaday';
 
@@ -22,12 +22,12 @@ export default PikadayInput.extend(PikadayMixin, {
   onPikadayRedraw: function() {
     this._super(...arguments);
     let that = this;
-    let $pikadayEl = Ember.$(this.get('pikaday').el);
-    if (Ember.$($pikadayEl).find('.g-button').length === 0) {
-      let $btn = Ember.$('<button class="g-button">Today</button>').click(function() {
+    let $pikadayEl = $(this.get('pikaday').el);
+    if ($($pikadayEl).find('.g-button').length === 0) {
+      let $btn = $('<button class="g-button">Today</button>').click(function() {
         that.get('pikaday').setDate(new Date());
       });
-      let $wrapper = Ember.$('<div class="today-button"></div>').append($btn);
+      let $wrapper = $('<div class="today-button"></div>').append($btn);
       $pikadayEl.append($wrapper);
     }
   }

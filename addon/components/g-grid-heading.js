@@ -1,16 +1,18 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { isPresent } from '@ember/utils';
+import { computed } from '@ember/object';
 import layout from '../templates/components/g-grid-heading';
 import Grid from './g-grid';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'th',
-  isSortAsc: Ember.computed('sortDir', function() {
+  isSortAsc: computed('sortDir', function() {
     return this.get('sortDir') === 'ASC';
   }),
   isSelector: false,
-  isSorted: Ember.computed('sortPath', 'sortField', function() {
-    return (Ember.isPresent(this.get('sortPath')) && (this.get('sortField') === this.get('sortPath')));
+  isSorted: computed('sortPath', 'sortField', function() {
+    return (isPresent(this.get('sortPath')) && (this.get('sortField') === this.get('sortPath')));
   }),
 
   _getParent() {

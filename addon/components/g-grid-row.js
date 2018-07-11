@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'tr',
   classNameBindings: ['isOdd:tr-odd:tr-even'],
-  isOdd: Ember.computed('rowIndex', function() {
+  isOdd: computed('rowIndex', function() {
     return (this.get('rowIndex') % 2 === 0);
   })
 });

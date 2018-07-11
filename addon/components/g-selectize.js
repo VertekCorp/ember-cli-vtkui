@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed, defineProperty } from '@ember/object';
 import layout from '../templates/components/g-selectize';
-const { Component, computed, defineProperty } = Ember;
 
 export default Component.extend({
   layout,

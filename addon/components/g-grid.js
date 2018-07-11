@@ -1,7 +1,11 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import EmberObject from '@ember/object';
+import { observer, set } from '@ember/object';
+import { debounce } from '@ember/runloop';
+import { A } from '@ember/array';
 import layout from '../templates/components/g-grid';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'table',
   classNames: ['g-grid'],
@@ -11,22 +15,22 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     this.setProperties({
-      headings: Ember.A([]),
-      children: Ember.A([]),
+      headings: A([]),
+      children: A([]),
       allSelected: false
     });
   },
 
   registerChild(child) {
     if (this.get('onDoubleClick') && !child.get('selector') && !child.get('dragHandle')) {
-      Ember.set(child, 'onDoubleClick', this.get('onDoubleClick'));
+      set(child, 'onDoubleClick', this.get('onDoubleClick'));
     }
 
-    Ember.run.debounce(this, function() {
+    debounce(this, function() {
       let headings = this.get('headings');
       let heading = child.get('heading');
       if (!headings.findBy('text', heading)) {
-        headings.pushObject(Ember.Object.create({
+        headings.pushObject(EmberObject.create({
           text: heading,
           sortPath: child.get('sortPath') || '',
           isSelector: child.get('selector'),
@@ -41,7 +45,7 @@ export default Ember.Component.extend({
     this.get('children').removeObject(child);
   },
 
-  allSelectedDidChange: Ember.observer('allSelected', function() {
+  allSelectedDidChange: observer('allSelected', function() {
     // let selection = this.get('selection');
     this.get('children').forEach((c) => {
       if (c.get('selector') && !c.get('disabled')) {

@@ -10,9 +10,8 @@ Read more about the addons, components, and strategies we use to incrementally i
 
 ### Installation
 
-* `git clone` this repository
+* `git clone <repository-url>`
 * `npm install`
-* `bower install`
 
 ### Running
 
