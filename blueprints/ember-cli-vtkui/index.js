@@ -1,7 +1,7 @@
 module.exports = {
   normalizeEntityName: function() {},
 
-  beforeInstall: function(options) {
+  beforeInstall: function() {
     return this.addAddonsToProject({
       packages: [
         { name: 'ember-cli-selectize', target: '0.5.12' },
