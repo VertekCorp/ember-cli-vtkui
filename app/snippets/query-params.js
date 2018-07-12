@@ -1,6 +1,6 @@
 // BEGIN-SNIPPET query-params
-import Ember from 'ember';
-export default Ember.Route.extend({
+import Route from '@ember/routing/route';
+export default Route.extend({
   queryParams: {
     "offset": { "refreshModel": true },
     "limit": { "refreshModel": true }

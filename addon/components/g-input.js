@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed, defineProperty } from '@ember/object';
 import layout from '../templates/components/g-input';
-const { Component, defineProperty, computed } = Ember;
 
 export default Component.extend({
   layout,

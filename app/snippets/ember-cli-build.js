@@ -1,3 +1,4 @@
+/* eslint-disable */
 // BEGIN-SNIPPET ember-cli-build
 var app = new EmberApp(defaults, {
   // Add options here

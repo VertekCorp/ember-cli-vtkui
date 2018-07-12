@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { A } from '@ember/array';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
-    return Ember.A([
+    return A([
       {id: 1, name: 'R2D2'},
       {id: 2, name: 'C3PO'},
       {id: 3, name: 'T3-H8'},
