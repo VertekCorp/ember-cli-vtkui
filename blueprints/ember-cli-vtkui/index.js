@@ -6,7 +6,7 @@ module.exports = {
       packages: [
         { name: 'ember-cli-selectize', target: '0.5.12' },
         { name: 'ember-cp-validations', target: '3.5.1' },
-        { name: 'ember-tooltips', target: '2.9.2' },
+        { name: 'ember-attacher', target: '^0.13.6' },
         { name: 'liquid-fire', target: '0.29.3' },
         { name: 'ember-modal-dialog', target: '2.4.3' },
         { name: 'ember-cli-sass', target: '5.3.1' },

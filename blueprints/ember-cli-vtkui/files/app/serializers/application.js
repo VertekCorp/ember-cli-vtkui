@@ -1,11 +1,11 @@
 import DS from 'ember-data';
-import Ember from 'ember';
+import { pluralize } from 'ember-inflector';
 
 export default DS.RESTSerializer.extend({
 
   normalizeArrayResponse(store, primaryModelClass, payload, id, requestType) {
     let data = {};
-    let pluralized = Ember.String.pluralize(primaryModelClass.modelName);
+    let pluralized = pluralize(primaryModelClass.modelName);
 
     data[pluralized] = payload.collection;
     delete payload.collection;
