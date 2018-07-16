@@ -1,8 +1,0 @@
-
-<label for={{id}} class="g-input-field-label">{{label}}</label>
-{{input id=id type=type value=value class="g-input-field" placeholder=placeholder readonly=readonly disabled=disabled}}
-{{#if validation.message}}
-  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace='right'}}
-{{else}}
-  <div class="g-valid"></div>
-{{/if}}
