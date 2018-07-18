@@ -22,6 +22,7 @@
 }
 
 .g-modal-body {
+  @extend .content;
   background: white;
   padding: 5px;
   border:1px solid $borderColor;
