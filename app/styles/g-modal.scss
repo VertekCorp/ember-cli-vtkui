@@ -17,6 +17,7 @@
 
 .g-modal-title {
   @extend .bold;
+  font-family: $fontFamily;
   color: $darkBlue;
   margin-bottom: 10px;
 }
