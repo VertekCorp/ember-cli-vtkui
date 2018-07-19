@@ -8,6 +8,6 @@ export default DS.RESTAdapter.extend({
     let slash = path.lastIndexOf('/');
     let hasSlash = slash !== -1;
     return (hasSlash) ? `${path.substr(0, slash)}/api` : `${path}/api`;
-  });
+  })
 
 });
