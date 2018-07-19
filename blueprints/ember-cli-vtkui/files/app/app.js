@@ -8,7 +8,7 @@ Application.MODEL_FACTORY_INJECTIONS = true;
 // for apps that require info from the main app
 let appOptions = {};
 
-const App = Ember.Application.extend({
+const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   autoboot: config.autoboot,

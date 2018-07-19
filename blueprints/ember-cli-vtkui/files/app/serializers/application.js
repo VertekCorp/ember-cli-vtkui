@@ -1,3 +1,4 @@
+import { merge } from '@ember/polyfills';
 import DS from 'ember-data';
 import { pluralize } from 'ember-inflector';
 
@@ -35,7 +36,7 @@ export default DS.RESTSerializer.extend({
    * @param options options.
    */
   serializeIntoHash: function(hash, type, snapshot, options) {
-    Ember.merge(hash, this.serialize(snapshot, options));
+    merge(hash, this.serialize(snapshot, options));
   },
 
   /**
