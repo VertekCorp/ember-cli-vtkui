@@ -1,24 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('g-panel-body', 'Integration | Component | g panel body', {
-  integration: true
-});
+module('Integration | Component | g panel body', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });"
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });"
 
-  this.render(hbs`{{g-panel-body}}`);
+    await render(hbs`{{g-panel-body}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
-  // Template block usage:"
-  this.render(hbs`
-    {{#g-panel-body}}
-      template block text
-    {{/g-panel-body}}
-  `);
+    // Template block usage:"
+    await render(hbs`
+      {{#g-panel-body}}
+        template block text
+      {{/g-panel-body}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
 });

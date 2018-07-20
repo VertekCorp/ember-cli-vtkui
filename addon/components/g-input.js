@@ -1,3 +1,4 @@
+import { oneWay, alias } from '@ember/object/computed';
 import Component from '@ember/component';
 import { computed, defineProperty } from '@ember/object';
 import layout from '../templates/components/g-input';
@@ -14,8 +15,8 @@ export default Component.extend({
     this._super(...arguments);
     let attrs = this.get('attrs');
     if (attrs.model && attrs.path) {
-      defineProperty(this, 'validation', computed.oneWay(`model.validations.attrs.${attrs.path}`));
-      defineProperty(this, 'value', computed.alias(`model.${attrs.path}`));
+      defineProperty(this, 'validation', oneWay(`model.validations.attrs.${attrs.path}`));
+      defineProperty(this, 'value', alias(`model.${attrs.path}`));
     }
   },
 
