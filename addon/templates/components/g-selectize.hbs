@@ -1,15 +1,33 @@
 <label for={{id}} class="g-input-field-label">{{label}}</label>
-{{ember-selectize id=id
-  placeholder=placeholder
-  content=content
-  optionValuePath=optionValuePath
-  optionLabelPath=optionLabelPath
-  select-item="select-item"
-  selection=selection
-  value=value
-  disabled=disabled}}
+{{#if value}}
+  {{ember-selectize id=id
+    placeholder=placeholder
+    content=content
+    optionValuePath=optionValuePath
+    optionLabelPath=optionLabelPath
+    select-item="select-item"
+    value=value
+    disabled=disabled}}
+{{else if selection}}
+  {{ember-selectize id=id
+    placeholder=placeholder
+    content=content
+    optionValuePath=optionValuePath
+    optionLabelPath=optionLabelPath
+    select-item="select-item"
+    selection=selection
+    disabled=disabled}}
+{{else}}
+  {{ember-selectize id=id
+    placeholder=placeholder
+    content=content
+    optionValuePath=optionValuePath
+    optionLabelPath=optionLabelPath
+    select-item="select-item"
+    disabled=disabled}}
+{{/if}}
 {{#if validation.message}}
-  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace='right'}}
+  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace="right"}}
 {{else}}
   <div class="g-valid"></div>
 {{/if}}

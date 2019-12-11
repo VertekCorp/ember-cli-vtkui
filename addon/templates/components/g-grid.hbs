@@ -12,12 +12,12 @@
 
 {{#if onDragAndDrop}}
 
-  {{#sortable-group tagName="tbody" onChange="reorderItems" as |group|}}
-    {{#each content as |row index|}}
-      {{#g-sortable-item tagName="tr" model=row group=group handle=".g-grid-col-drag-handle" rowIndex=index}}
+  {{#sortable-group model=content tagName="tbody" onChange="reorderItems" as |group|}}
+    {{#each group.model as |row index|}}
+      {{#group.item tagName="tr" model=row handle=".g-grid-col-drag-handle"}}
         {{yield row index}}
-      {{/g-sortable-item}}
-      {{else}}
+      {{/group.item}}
+    {{else}}
       <tr>
         <td>No records found.</td>
       </tr>

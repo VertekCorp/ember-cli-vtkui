@@ -1,7 +1,7 @@
 <label class="g-input-field-label">{{label}}</label>
 {{g-pikaday value=value disabled=disabled class="g-date"}}
 {{#if validation.message}}
-  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace='right'}}
+  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace="right"}}
 {{else}}
   <div class="g-valid"></div>
 {{/if}}

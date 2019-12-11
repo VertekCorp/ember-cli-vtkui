@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-vtkui',
+  name: require('./package').name,
 
   contentFor: function(type) {
     if (type === 'head') {

@@ -16,6 +16,7 @@ export default Component.extend({
 
 
   init() {
+    debugger;
     this._super(...arguments);
     let attrs = this.get('attrs');
     if (attrs.model && attrs.path) {
