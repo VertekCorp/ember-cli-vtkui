@@ -15,7 +15,7 @@
 {{#g-panel title="Toolbar"}}
   {{#g-toolbar}}
     {{g-input label="Input" model=model path="name" placeholder="Search..."}}
-    {{g-selectize label="Robots" content=model optionValuePath="content.id" optionLabelPath="content.name"}}
+    {{g-selectize label="Robots" content=model selection=selectedRobot optionLabelPath="name" onChange=(action (mut selectedRobot))}}
     {{g-button text="Button"}}
   {{/g-toolbar}}
   {{#g-panel-body}}

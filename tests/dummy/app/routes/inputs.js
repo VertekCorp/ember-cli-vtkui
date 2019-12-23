@@ -34,23 +34,5 @@ export default Route.extend({
       carModels: models.carModels,
       selectedModels: A([])
     });
-  },
-
-  actions: {
-    submit() {
-      let person = this.modelFor('inputs').person;
-      window.alert("the form is valid: " + person.get('validations.isValid'));
-    },
-    setCarModels(make) {
-      let controller = this.controllerFor('inputs');
-      let selectedModels = controller.get('selectedModels');
-      selectedModels.clear();
-      controller.get('carModels').forEach((i) => {
-        if (i.make === make.id) {
-          selectedModels.pushObject(i);
-        }
-      });
-    }
   }
-
 });

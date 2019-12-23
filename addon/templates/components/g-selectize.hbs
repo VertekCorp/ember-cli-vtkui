@@ -1,30 +1,28 @@
 <label for={{id}} class="g-input-field-label">{{label}}</label>
-{{#if value}}
-  {{ember-selectize id=id
-    placeholder=placeholder
-    content=content
-    optionValuePath=optionValuePath
-    optionLabelPath=optionLabelPath
-    select-item="select-item"
-    value=value
-    disabled=disabled}}
-{{else if selection}}
-  {{ember-selectize id=id
-    placeholder=placeholder
-    content=content
-    optionValuePath=optionValuePath
-    optionLabelPath=optionLabelPath
-    select-item="select-item"
-    selection=selection
-    disabled=disabled}}
+{{#if lookups}}
+  <PowerSelect @options={{this.lookupValues}}
+    @selected={{this.selection}}
+    @disabled={{this.disabled}}
+    @placeholder={{this.placeholder}}
+    @onChange={{this.onChange}} as |item|>
+    {{#if optionLabelPath}}
+      {{get item this.optionLabelPath}}
+    {{else}}
+      {{item}}
+    {{/if}}
+  </PowerSelect>
 {{else}}
-  {{ember-selectize id=id
-    placeholder=placeholder
-    content=content
-    optionValuePath=optionValuePath
-    optionLabelPath=optionLabelPath
-    select-item="select-item"
-    disabled=disabled}}
+  <PowerSelect @options={{this.content}}
+    @selected={{this.selection}}
+    @disabled={{this.disabled}}
+    @placeholder={{this.placeholder}}
+    @onChange={{this.onChange}} as |item|>
+    {{#if optionLabelPath}}
+      {{get item this.optionLabelPath}}
+    {{else}}
+      {{item}}
+    {{/if}}
+  </PowerSelect>
 {{/if}}
 {{#if validation.message}}
   {{g-invalid text="!" tooltipContent=validation.message tooltipPlace="right"}}

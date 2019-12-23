@@ -1,5 +1,4 @@
 {{!-- BEGIN-SNIPPET combos --}}
-{{g-selectize label="Robot" content=model 
-  optionValuePath="content.id" optionLabelPath="content.name"
-  placeholder="Select a Droid..." onChange="selectRobot"}}
+{{g-selectize label="Robot" selection=selection content=model optionLabelPath="name"
+  placeholder="Select a Droid..." onChange=(action "selectRobot")}}
 {{!-- END-SNIPPET--}}
