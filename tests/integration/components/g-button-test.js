@@ -8,6 +8,6 @@ module('Integration | Component | g button', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{g-button text="My Button"}}`);
-    assert.equal(this.$().text().trim(), 'My Button');
+    assert.equal(this.element.textContent.trim(), 'My Button');
   });
 });

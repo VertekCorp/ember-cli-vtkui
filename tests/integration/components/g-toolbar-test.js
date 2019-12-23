@@ -21,6 +21,6 @@ module('Integration | Component | g toolbar', function(hooks) {
       {{/g-toolbar}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
