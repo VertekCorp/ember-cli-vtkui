@@ -21,6 +21,6 @@ module('Integration | Component | g panel', function(hooks) {
       {{/g-panel}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

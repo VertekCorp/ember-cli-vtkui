@@ -4,8 +4,8 @@ git push origin --delete gh-pages
 git checkout -b gh-pages
 ember build --environment production
 git rm -rf app addon config tests
-git rm -rf ember-cli-build.js bower.json package.json testem.json
-git rm -rf .bowerrc .editorconfig .jshintrc .travis.yml
+git rm -rf ember-cli-build.js package.json testem.json
+git rm -rf .editorconfig .jshintrc .travis.yml
 mv dist/* .
 rm -rf dist
 git add .

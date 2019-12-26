@@ -29,7 +29,7 @@ export default Route.extend({
         showModal: true,
         modalTitle: 'Info',
         modalMessage: `You dragged: ${draggedRow.get('firstName')} ${draggedRow.get('lastName')}.
-        <br/><br/>
+        <br><br>
         The new order of items is: ${JSON.stringify(rows)}`
       });
     },

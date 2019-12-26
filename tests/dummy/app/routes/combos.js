@@ -9,11 +9,5 @@ export default Route.extend({
       {id: 3, name: 'T3-H8'},
       {id: 4, name: 'BB-8'}
     ]);
-  },
-
-  actions: {
-    selectRobot(bot) {
-      window.alert('you selected: ' + JSON.stringify(bot));
-    }
   }
 });

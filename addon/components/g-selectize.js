@@ -14,6 +14,9 @@ export default Component.extend({
     return `${this.get('elementId')}-g-selectize`;
   }),
 
+  lookupValues: computed('lookups', function() {
+    return this.lookups.map(lu => lu.value);
+  }),
 
   init() {
     this._super(...arguments);
@@ -26,11 +29,5 @@ export default Component.extend({
   isValid: computed('validation.isValid', function() {
     let validation = this.get('validation');
     return (validation) ? validation.get('isValid') : true;
-  }),
-
-  actions: {
-    'select-item': function(item) {
-      this.sendAction('onChange', item);
-    }
-  }
+  })
 });

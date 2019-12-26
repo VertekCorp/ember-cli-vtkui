@@ -1,23 +1,19 @@
-.selectize-dropdown, .selectize-input, .selectize-input input {
+.ember-power-select-trigger {
   @extend .content;
-  line-height: 18px;
+  display: inline-block;
+  line-height: 20px;
   width: 190px;
-  width: 15.7em;
-}
-.selectize-input {
-  padding: 2px;
-  padding-left: 4px;
-  display: inline-block;
-  width: 196px;
-}
-.selectize-input > input {
-  display: inline-block;
-}
-.selectize-control {
-  display: inline-block;
-  height: 26px;
+  // width: 15.7em;
+  // height: 22px;
   vertical-align: middle;
+  // padding-left: 4px;
+  padding: 2px;
+	// border: 1px solid $borderColor;
 }
-.selectize-control.single .selectize-input, .selectize-dropdown.single {
-	border: 1px solid $borderColor;
+.ember-power-select-selected-item {
+  @extend .content;
+  margin-left: 5px;
+}
+.ember-basic-dropdown-content {
+  @extend .content;
 }

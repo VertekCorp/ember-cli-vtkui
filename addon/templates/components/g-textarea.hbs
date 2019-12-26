@@ -1,7 +1,7 @@
 <label for={{id}}>{{label}}</label>
 {{textarea id=id value=value disabled=disabled}}
 {{#if validation.message}}
-  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace='right'}}
+  {{g-invalid text="!" tooltipContent=validation.message tooltipPlace="right"}}
 {{else}}
   <div class="g-valid"></div>
 {{/if}}

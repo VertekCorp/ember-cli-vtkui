@@ -3,17 +3,17 @@
 
     {{#g-panel title="About"}}
       {{#g-panel-body}}
-          <p>
-              Ember-Cli-Vtkui is an <a href="http://emberjs.com/" target="_blank">EmberJS</a> Addon project
-            focused on providing components and styling to support a team's desire to incrementally replace legacy
-            <a href="http://www.gwtproject.org/" target="_blank">GWT</a> /
-            <a href="https://www.sencha.com/products/gxt/" target="_blank">GXT</a>
-            UI code with EmberJS applications.
-          </p>
-          <p>
-            The end goal may be to target <a href="https://github.com/dgeb/ember-engines">Ember-Engines</a>
-            as a full GWT/GXT replacement.
-          </p>
+        <p>
+          Ember-Cli-Vtkui is an <a href="http://emberjs.com/" target="_blank" rel="noopener">EmberJS</a> Addon project
+          focused on providing components and styling to support a team's desire to incrementally replace legacy
+          <a href="http://www.gwtproject.org/" target="_blank" rel="noopener">GWT</a> /
+          <a href="https://www.sencha.com/products/gxt/" target="_blank" rel="noopener">GXT</a>
+          UI code with EmberJS applications.
+        </p>
+        <p>
+          The end goal may be to target <a href="https://github.com/dgeb/ember-engines">Ember-Engines</a>
+          as a full GWT/GXT replacement.
+        </p>
       {{/g-panel-body}}
     {{/g-panel}}
 
@@ -24,14 +24,14 @@
           <li>Composable components styled to fit in with existing GXT 2.2.5 components</li>
           <li>
             Blueprints that configure the Ember application to be embedded in a GWT application
-             <i>(more on this in the next section)</i>.
-           </li>
+            <i>(more on this in the next section)</i>.
+          </li>
           <li>
             Some additional addons to address common needs across our embedded Ember apps:
             <ul>
               {{addon-item url="https://github.com/offirgolan/ember-cp-validations" name="ember-cp-validations"}}
               {{addon-item url="https://github.com/sir-dunxalot/ember-tooltips" name="ember-tooltips"}}
-              {{addon-item url="https://github.com/miguelcobain/ember-cli-selectize" name="ember-cli-selectize"}}
+              {{addon-item url="https://github.com/cibernox/ember-power-select" name="ember-power-select"}}
               {{addon-item url="https://github.com/ember-animation/liquid-fire" name="liquid-fire"}}
               {{addon-item url="https://github.com/yapplabs/ember-modal-dialog" name="ember-modal-dialog"}}
               {{addon-item url="https://github.com/aexmachina/ember-cli-sass" name="ember-cli-sass"}}
@@ -69,118 +69,118 @@
 
     {{#g-panel title="GWT Setup"}}
       {{#g-panel-body}}
-      Create a class that when instantiated will create and boot an Ember Application:
-    <pre class="hljs java">
-      package com.example;
+        Create a class that when instantiated will create and boot an Ember Application:
+        <pre class="hljs java">
+          package com.example;
 
-      import com.extjs.gxt.ui.client.Style.LayoutRegion;
-      import com.extjs.gxt.ui.client.widget.ContentPanel;
-      import com.extjs.gxt.ui.client.widget.Html;
-      import com.extjs.gxt.ui.client.widget.layout.BorderLayout;
-      import com.extjs.gxt.ui.client.widget.layout.BorderLayoutData;
-      import com.google.gwt.json.client.JSONObject;
-
-      /**
-       * A GXT ContentPanel that renders an Ember Application.
-       */
-      public class EmberApp extends ContentPanel {
+          import com.extjs.gxt.ui.client.Style.LayoutRegion;
+          import com.extjs.gxt.ui.client.widget.ContentPanel;
+          import com.extjs.gxt.ui.client.widget.Html;
+          import com.extjs.gxt.ui.client.widget.layout.BorderLayout;
+          import com.extjs.gxt.ui.client.widget.layout.BorderLayoutData;
+          import com.google.gwt.json.client.JSONObject;
 
           /**
-           * Constructor for single instance Ember Applications.
-           * @param emberModulePrefix the Ember application's config/environment.js modulePrefix.
-           */
-          public EmberApp(final String emberModulePrefix) {
-              this(emberModulePrefix, emberModulePrefix, new JSONObject());
+          * A GXT ContentPanel that renders an Ember Application.
+          */
+          public class EmberApp extends ContentPanel {
+
+              /**
+              * Constructor for single instance Ember Applications.
+              * @param emberModulePrefix the Ember application's config/environment.js modulePrefix.
+              */
+              public EmberApp(final String emberModulePrefix) {
+                  this(emberModulePrefix, emberModulePrefix, new JSONObject());
+              }
+
+
+              /**
+              * An EmberJS Application.
+              * @param emberModulePrefix modulePrefix of the Ember app as defined in the app's config/environment.js file.
+              * @param eleId the identifier of the DOM element to create and render the Ember app into.
+              * @param opts a JSONObject of options to pass to the Ember Application for use in app initializers.
+              */
+              public EmberApp(final String emberModulePrefix, final String eleId, final JSONObject opts) {
+
+                  // configure the content panel.
+                  setHeaderVisible(false);
+                  setBorders(false);
+                  setLayout(new BorderLayout());
+                  setBodyStyle("background: white;");
+
+                  // add a DOM element to render the Ember app into
+                  add(new Html("&lt;div id=\"" + eleId + "\"&gt;&lt;/div&gt;"), new BorderLayoutData(LayoutRegion.CENTER));
+
+                  // instantiate the Ember app via JSNI
+                  MyGwtModule.createEmberApp(emberModulePrefix, eleId, opts);
+              }
+
+          }
+        </pre>
+
+          And the JSNI method that instantiates and renders the Ember Application:
+        <pre class="hljs java">
+          /**
+          * Creates an Ember Application instance and renders it to the element with the given eleId.
+          * @param modulePrefix the Ember Application modulePrefix.
+          * @param eleId the id of an existing DOM element.
+          * @param opts a JSONObject to pass as options to the Ember Application.
+          */
+          public static native void createEmberApp(final String modulePrefix, final String eleId, final JSONObject opts) /*-{
+              $wnd.require(modulePrefix + "/app")["default"].create({
+                  "name": modulePrefix,
+                  "autoboot": true,
+                  "rootElement": "#" + eleId,
+                  "appOptions": JSON.parse(opts.toString())
+              });
+          }-*/;
+        </pre>
+
+        Now we need to make sure that the Ember Application assets are loaded. The following assumes that each Ember Application
+        distribution is available in the web application's "apps" directory. I also maintain the list of available apps but
+        this could probably be improved to discover what's available instead.
+        In the GWT Module EntryPoint:
+
+        <pre class="hljs java">
+          /**
+          * Maintains a List of available Ember Applications.
+          */
+          private static final List&lt;String&gt; EMBER_MODULES = Lists.newArrayList(
+            "app1",
+            "some-other-app",
+            "app3"
+          );
+
+          /** loads emberjs assets.*/
+          private void loadEmberAssets() {
+              // load vendor.js first
+              final String vendorJsPath = "apps/" + EMBER_MODULES.get(0) + "/assets/vendor.js";
+              ScriptInjector.fromUrl(GWT.getHostPageBaseURL() + vendorJsPath).setCallback(new Callback&lt;Void, Exception&gt;()
+                  {
+                      @Override
+                      public void onFailure(final Exception e) {
+                          e.printStackTrace();
+                      }
+
+                      @Override
+                      public void onSuccess(final Void aVoid) {
+                          loadAppAssets();
+                      }
+                  }).setWindow(ScriptInjector.TOP_WINDOW).inject();
           }
 
 
           /**
-           * An EmberJS Application.
-           * @param emberModulePrefix modulePrefix of the Ember app as defined in the app's config/environment.js file.
-           * @param eleId the identifier of the DOM element to create and render the Ember app into.
-           * @param opts a JSONObject of options to pass to the Ember Application for use in app initializers.
-           */
-          public EmberApp(final String emberModulePrefix, final String eleId, final JSONObject opts) {
-
-              // configure the content panel.
-              setHeaderVisible(false);
-              setBorders(false);
-              setLayout(new BorderLayout());
-              setBodyStyle("background: white;");
-
-              // add a DOM element to render the Ember app into
-              add(new Html("&lt;div id=\"" + eleId + "\"&gt;&lt;/div&gt;"), new BorderLayoutData(LayoutRegion.CENTER));
-
-              // instantiate the Ember app via JSNI
-              MyGwtModule.createEmberApp(emberModulePrefix, eleId, opts);
+          * Loads Ember Application js files.
+          */
+          private void loadAppAssets() {
+              for (String modulePrefix : EMBER_MODULES) {
+                  String appJsPath = "apps/" + modulePrefix + "/assets/" + modulePrefix + ".js";
+                  ScriptInjector.fromUrl(GWT.getHostPageBaseURL() + appJsPath).setCallback(emberCallback)
+                          .setWindow(ScriptInjector.TOP_WINDOW).inject();
+              }
           }
-
-      }
-    </pre>
-
-      And the JSNI method that instantiates and renders the Ember Application:
-    <pre class="hljs java">
-      /**
-       * Creates an Ember Application instance and renders it to the element with the given eleId.
-       * @param modulePrefix the Ember Application modulePrefix.
-       * @param eleId the id of an existing DOM element.
-       * @param opts a JSONObject to pass as options to the Ember Application.
-       */
-      public static native void createEmberApp(final String modulePrefix, final String eleId, final JSONObject opts) /*-{
-          $wnd.require(modulePrefix + "/app")["default"].create({
-              "name": modulePrefix,
-              "autoboot": true,
-              "rootElement": "#" + eleId,
-              "appOptions": JSON.parse(opts.toString())
-          });
-      }-*/;
-    </pre>
-
-    Now we need to make sure that the Ember Application assets are loaded. The following assumes that each Ember Application
-    distribution is available in the web application's "apps" directory. I also maintain the list of available apps but
-    this could probably be improved to discover what's available instead.
-    In the GWT Module EntryPoint:
-
-    <pre class="hljs java">
-      /**
-       * Maintains a List of available Ember Applications.
-       */
-      private static final List&lt;String&gt; EMBER_MODULES = Lists.newArrayList(
-        "app1",
-        "some-other-app",
-        "app3"
-      );
-
-      /** loads emberjs assets.*/
-      private void loadEmberAssets() {
-          // load vendor.js first
-          final String vendorJsPath = "apps/" + EMBER_MODULES.get(0) + "/assets/vendor.js";
-          ScriptInjector.fromUrl(GWT.getHostPageBaseURL() + vendorJsPath).setCallback(new Callback&lt;Void, Exception&gt;()
-              {
-                  @Override
-                  public void onFailure(final Exception e) {
-                      e.printStackTrace();
-                  }
-
-                  @Override
-                  public void onSuccess(final Void aVoid) {
-                      loadAppAssets();
-                  }
-              }).setWindow(ScriptInjector.TOP_WINDOW).inject();
-      }
-
-
-      /**
-       * Loads Ember Application js files.
-       */
-      private void loadAppAssets() {
-          for (String modulePrefix : EMBER_MODULES) {
-              String appJsPath = "apps/" + modulePrefix + "/assets/" + modulePrefix + ".js";
-              ScriptInjector.fromUrl(GWT.getHostPageBaseURL() + appJsPath).setCallback(emberCallback)
-                      .setWindow(ScriptInjector.TOP_WINDOW).inject();
-          }
-      }
-    </pre>
+        </pre>
       {{/g-panel-body}}
     {{/g-panel}}
 

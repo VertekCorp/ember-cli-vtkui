@@ -22,6 +22,6 @@ module('Integration | Component | g editable grid col', function(hooks) {
         {{/g-grid-col}}
       {{/g-grid}}
     `);
-    assert.equal(this.$().text().trim().split(/[\n\s]+/)[1], 'Bubba');
+    assert.equal(this.element.textContent.trim().split(/[\n\s]+/)[1], 'Bubba');
   });
 });
