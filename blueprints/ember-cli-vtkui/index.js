@@ -4,7 +4,6 @@ module.exports = {
   beforeInstall: function() {
     return this.addAddonsToProject({
       packages: [
-        { name: 'ember-cli-selectize', target: '0.5.12' },
         { name: 'ember-cp-validations', target: '3.5.6' },
         { name: 'ember-attacher', target: '1.0.2' },
         { name: 'liquid-fire', target: '0.31.0' },
