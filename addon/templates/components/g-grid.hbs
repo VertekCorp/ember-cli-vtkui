@@ -12,7 +12,7 @@
 
 {{#if onDragAndDrop}}
 
-  {{#sortable-group model=content tagName="tbody" onChange="reorderItems" as |group|}}
+  {{#sortable-group model=content tagName="tbody" onChange=(action "reorderItems") as |group|}}
     {{#each group.model as |row index|}}
       {{#group.item tagName="tr" model=row handle=".g-grid-col-drag-handle"}}
         {{yield row index}}
