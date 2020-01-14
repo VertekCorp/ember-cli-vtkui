@@ -42,6 +42,7 @@
 @import "fieldset";
 @import "g-pikaday";
 @import "g-checkbox";
+@import 'ember-paper';
 
 /** needed in a gxt app to allow all containers to fill parents.*/
 .ember-application, .ember-application > .ember-view, .liquid-container, .liquid-child {
