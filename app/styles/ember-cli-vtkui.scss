@@ -33,7 +33,6 @@
 @import "g-modal";
 @import "g-paginator";
 @import "g-panel";
-@import "ember-power-select";
 @import "g-selectize";
 @import "g-tabs";
 @import "g-textarea";
@@ -43,6 +42,7 @@
 @import "g-pikaday";
 @import "g-checkbox";
 @import 'ember-paper';
+@import "ember-power-select";
 
 /** needed in a gxt app to allow all containers to fill parents.*/
 .ember-application, .ember-application > .ember-view, .liquid-container, .liquid-child {

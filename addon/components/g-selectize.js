@@ -8,6 +8,10 @@ export default Component.extend({
   classNames: ['g-input'],
 
   classNameBindings: ['isValid::g-selectize-invalid'],
+  isSearchEnabled: computed('this.searchField', function() {
+    let searchField = this.searchField;
+    return searchField ? true : false;
+  }),
 
   placeholder: 'Select...',
   id: computed('elementId', function() {

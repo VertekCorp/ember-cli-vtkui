@@ -42,8 +42,8 @@
     "ember-cli-eslint": "^5.1.0",
     "ember-cli-file-saver": "^2.0.0",
     "ember-cli-inject-live-reload": "^2.0.1",
-    "ember-cli-moment-shim": "3.7.1",
-    "ember-cli-sass": "^10.0.0",
+    "ember-cli-moment-shim": "^3.7.1",
+    "ember-cli-sass": "^10.0.1",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.3",
@@ -58,11 +58,10 @@
     "ember-light-table": "git+https://github.com/offirgolan/ember-light-table.git#2-x",
     "ember-load-initializers": "^2.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-moment": "^8.0.0",
     "ember-modal-dialog": "2.4.3",
-    "ember-paper": "^1.0.0-beta.26",
+    "ember-moment": "^8.0.0",
+    "ember-paper": "^1.0.0-beta.25",
     "ember-pikaday": "2.4.1",
-    "ember-power-select": "^4.0.0-beta.4",
     "ember-qunit": "^4.5.1",
     "ember-resolver": "^5.3.0",
     "ember-responsive": "^3.0.5",
@@ -75,7 +74,7 @@
     "liquid-fire": "0.31.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.9.0",
-    "sass": "^1.23.7"
+    "sass": "^1.24.4"
   },
   "engines": {
     "node": "8.* || >= 10.*"
