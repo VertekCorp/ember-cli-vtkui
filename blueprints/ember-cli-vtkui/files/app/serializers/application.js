@@ -46,7 +46,7 @@ export default DS.RESTSerializer.extend({
    * @returns {*}
    */
   serialize: function(snapshot, options) {
-    options = options || { includeId: true };
+    options = (options && Object.entries(options).length > 0) ? options : { includeId: true };
     return this._super(snapshot, options);
   }
 

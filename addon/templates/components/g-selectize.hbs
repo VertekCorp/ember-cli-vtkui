@@ -4,9 +4,9 @@
     @selected={{this.selection}}
     @disabled={{this.disabled}}
     @placeholder={{this.placeholder}}
-    @searchEnabled={{this.searchEnabled}}
+    @searchEnabled={{this.isSearchEnabled}}
     @searchField={{this.searchField}}
-    @onChange={{this.onChange}} as |item|>
+    @onchange={{this.onChange}} as |item|>
     {{#if optionLabelPath}}
       {{get item this.optionLabelPath}}
     {{else}}
@@ -18,9 +18,9 @@
     @selected={{this.selection}}
     @disabled={{this.disabled}}
     @placeholder={{this.placeholder}}
-    @searchEnabled={{this.searchEnabled}}
+    @searchEnabled={{this.isSearchEnabled}}
     @searchField={{this.searchField}}
-    @onChange={{this.onChange}} as |item|>
+    @onchange={{this.onChange}} as |item|>
     {{#if optionLabelPath}}
       {{get item this.optionLabelPath}}
     {{else}}
