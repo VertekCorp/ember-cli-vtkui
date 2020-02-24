@@ -14,7 +14,9 @@ module.exports = {
         { name: 'ember-pikaday', target: '2.4.1'},
         { name: 'ember-paper', target: '^1.0.0-beta.25'},
         { name: 'ember-light-table', target: '^2.0.0-beta.4'},
-        { name: 'ember-font-awesome', target: '^4.0.0-rc.4'}
+        { name: 'ember-font-awesome', target: '^4.0.0-rc.4'},
+        { name: 'ember-engines', target: '^0.8.5'},
+        { name: 'ember-moment', target: '^8.0.0'}
       ]
     });
   }
