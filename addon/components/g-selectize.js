@@ -13,6 +13,8 @@ export default Component.extend({
     return searchField ? true : false;
   }),
 
+  renderInPlace: true,
+
   placeholder: 'Select...',
   id: computed('elementId', function() {
     return `${this.get('elementId')}-g-selectize`;
