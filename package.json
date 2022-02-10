@@ -27,7 +27,7 @@
   "dependencies": {
     "ember-cli-babel": "^7.11.1",
     "ember-cli-htmlbars": "^4.0.5",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "@ember/jquery": "^1.1.0",
